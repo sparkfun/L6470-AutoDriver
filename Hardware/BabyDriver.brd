@@ -11,7 +11,7 @@
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -19,7 +19,7 @@
 <layer number="21" name="tPlace" color="16" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
@@ -33,8 +33,8 @@
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="51" name="tDocu" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="6" fill="1" visible="no" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
 <layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
@@ -176,6 +176,27 @@
 <wire x1="9.779" y1="24.638" x2="9.779" y2="8.763" width="0.254" layer="21"/>
 <wire x1="9.779" y1="8.763" x2="7.747" y2="8.763" width="0.254" layer="21"/>
 <text x="11.811" y="10.541" size="1.27" layer="21" font="vector" ratio="15" rot="R90">MOTOR POWER</text>
+<text x="51.181" y="45.847" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
+<text x="53.721" y="45.847" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">FLAGN</text>
+<text x="56.261" y="45.847" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">RESETN</text>
+<text x="68.961" y="45.847" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="71.501" y="45.847" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">CSN</text>
+<text x="74.041" y="45.847" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
+<text x="5.461" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
+<text x="8.001" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
+<text x="10.541" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
+<text x="13.081" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
+<text x="15.621" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
+<text x="28.321" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
+<text x="30.861" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
+<text x="33.401" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
+<text x="35.941" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCIN</text>
+<text x="38.481" y="45.72" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
+<wire x1="3.81" y1="45.72" x2="3.81" y2="43.18" width="0.254" layer="22"/>
+<wire x1="3.81" y1="43.18" x2="74.93" y2="43.18" width="0.254" layer="22"/>
+<wire x1="74.93" y1="43.18" x2="74.93" y2="45.72" width="0.254" layer="22"/>
+<text x="50.165" y="49.149" size="1.27" layer="22" font="vector" ratio="15" rot="MR0">BREADBOARD
+COMPATIBLE</text>
 </plain>
 <libraries>
 <library name="SparkFun">
@@ -953,10 +974,10 @@ We've spent an enormous amount of time creating and checking these footprints an
 <packages>
 <package name="SOT23">
 <description>&lt;b&gt;SOT-23&lt;/b&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="21"/>
 <smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
 <smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
 <smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
@@ -1316,9 +1337,9 @@ We've spent an enormous amount of time creating and checking these footprints an
 <attribute name="PROD_ID" value="CAP-00867" x="35.56" y="10.16" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" value="10nF" x="35.56" y="10.16" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C4" library="SparkFun-Capacitors" package="0402-CAP" value="0.22uF" x="16.51" y="15.24" rot="R270">
-<attribute name="PROD_ID" value="CAP-09885" x="16.51" y="15.24" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" value=".22uF" x="16.51" y="15.24" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="C4" library="SparkFun-Capacitors" package="0402-CAP" value="0.22uF" x="13.97" y="15.24" rot="R270">
+<attribute name="PROD_ID" value="CAP-09885" x="13.97" y="15.24" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" value=".22uF" x="13.97" y="15.24" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="C3" library="SparkFun-Capacitors" package="PANASONIC_H13" value="100uF" x="24.13" y="15.24" rot="R90">
 <attribute name="PROD_ID" value="CAP-08362" x="24.13" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
@@ -1881,10 +1902,10 @@ We've spent an enormous amount of time creating and checking these footprints an
 <contactref element="C4" pad="1"/>
 <contactref element="JP6" pad="1"/>
 <contactref element="JP6" pad="2"/>
-<wire x1="47.42" y1="18.165" x2="48.391" y2="18.165" width="0.254" layer="1"/>
-<wire x1="48.391" y1="18.165" x2="48.768" y2="18.542" width="0.254" layer="1"/>
-<wire x1="48.768" y1="18.542" x2="48.768" y2="18.923" width="0.254" layer="1"/>
-<via x="48.768" y="18.923" extent="1-16" drill="0.381"/>
+<wire x1="47.42" y1="18.165" x2="49.661" y2="18.165" width="0.254" layer="1"/>
+<wire x1="49.661" y1="18.165" x2="50.038" y2="18.542" width="0.254" layer="1"/>
+<wire x1="50.038" y1="18.542" x2="50.038" y2="18.923" width="0.254" layer="1"/>
+<via x="50.038" y="18.923" extent="1-16" drill="0.381"/>
 <wire x1="41.48" y1="18.815" x2="40.24" y2="18.815" width="0.254" layer="1"/>
 <wire x1="40.24" y1="18.815" x2="40.005" y2="19.05" width="0.254" layer="1"/>
 <via x="40.005" y="19.05" extent="1-16" drill="0.381"/>
@@ -1898,7 +1919,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="53.96" y1="27.94" x2="49.149" y2="27.94" width="0.2032" layer="1"/>
 <wire x1="49.149" y1="27.94" x2="48.768" y2="27.559" width="0.2032" layer="1"/>
 <via x="48.768" y="27.559" extent="1-16" drill="0.381"/>
-<wire x1="48.768" y1="27.559" x2="48.768" y2="18.923" width="0.2032" layer="2"/>
+<wire x1="48.768" y1="27.559" x2="50.038" y2="18.923" width="0.2032" layer="2"/>
 <wire x1="34.61" y1="11.6" x2="34.91" y2="10.16" width="0.2032" layer="1"/>
 <wire x1="34.91" y1="10.16" x2="34.91" y2="9.159" width="0.2032" layer="1"/>
 <wire x1="34.91" y1="9.159" x2="35.052" y2="9.017" width="0.2032" layer="1"/>
@@ -1911,8 +1932,8 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="38.989" y1="11.557" x2="39.878" y2="11.557" width="0.2032" layer="1"/>
 <wire x1="24.13" y1="19.94" x2="24.13" y2="16.51" width="0.2032" layer="1"/>
 <via x="24.13" y="16.51" extent="1-16" drill="0.381"/>
-<wire x1="16.51" y1="15.89" x2="16.51" y2="17.018" width="0.2032" layer="1"/>
-<via x="16.51" y="17.018" extent="1-16" drill="0.381"/>
+<wire x1="13.97" y1="15.89" x2="13.97" y2="17.018" width="0.2032" layer="1"/>
+<via x="13.97" y="17.018" extent="1-16" drill="0.381"/>
 </signal>
 <signal name="PGND">
 <contactref element="U1" pad="13"/>
@@ -1951,8 +1972,8 @@ We've spent an enormous amount of time creating and checking these footprints an
 <via x="45.085" y="17.526" extent="1-16" drill="0.381"/>
 <via x="43.815" y="17.526" extent="1-16" drill="0.381"/>
 <wire x1="44.45" y1="15.24" x2="45.085" y2="15.24" width="0.2032" layer="1"/>
-<wire x1="16.51" y1="14.59" x2="16.51" y2="13.335" width="0.2032" layer="1"/>
-<via x="16.51" y="13.335" extent="1-16" drill="0.381"/>
+<wire x1="13.97" y1="14.59" x2="13.97" y2="13.335" width="0.2032" layer="1"/>
+<via x="13.97" y="13.335" extent="1-16" drill="0.381"/>
 <wire x1="24.13" y1="10.54" x2="24.13" y2="13.97" width="0.2032" layer="1"/>
 <via x="24.13" y="13.97" extent="1-16" drill="0.381"/>
 <polygon width="0.2032" layer="16" isolate="0.3048">
