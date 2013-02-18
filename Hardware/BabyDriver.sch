@@ -7326,7 +7326,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <sheet>
 <plain>
 <text x="173.228" y="7.62" size="3.81" layer="94">Mike Hord</text>
-<text x="238.76" y="6.35" size="3.81" layer="94">02</text>
+<text x="238.76" y="6.35" size="3.81" layer="94">03</text>
 <text x="194.056" y="153.416" size="1.778" layer="96">63V</text>
 </plain>
 <instances>
