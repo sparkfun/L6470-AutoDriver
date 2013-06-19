@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -6399,6 +6399,9 @@ We've spent an enormous amount of time creating and checking these footprints an
 <text x="0" y="2.54" size="1.778" layer="27">http://creativecommons.org/licenses/by-sa/3.0</text>
 <text x="11.43" y="0" size="1.778" layer="27">Designed by:</text>
 </package>
+<package name="FOUR_LAYER_WARNING">
+<text x="0" y="0" size="1.27" layer="51">THIS IS A FOUR-LAYER BOARD!</text>
+</package>
 </packages>
 <symbols>
 <symbol name="LETTER_L">
@@ -6445,6 +6448,9 @@ We've spent an enormous amount of time creating and checking these footprints an
 <text x="-1.016" y="3.556" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="3.3V" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
+<symbol name="FOUR_LAYER_WARNING">
+<text x="0" y="0" size="1.778" layer="94">THIS IS A FOUR-LAYER BOARD!</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="FRAME-LETTER" prefix="FRAME">
@@ -6469,6 +6475,21 @@ Standard 8.5x11 US Letter frame</description>
 </gates>
 <devices>
 <device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FOUR_LAYER_WARNING">
+<description>Warning text which will appear on both the schematic&lt;BR&gt;
+and the board file, notifying viewers that the design is a&lt;br&gt;
+four-layer PCB.</description>
+<gates>
+<gate name="G$1" symbol="FOUR_LAYER_WARNING" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FOUR_LAYER_WARNING">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -7321,6 +7342,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="JP4" library="SparkFun-Connectors" deviceset="M03X2" device=""/>
 <part name="GND12" library="SparkFun" deviceset="GND" device=""/>
 <part name="SJ2" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="TRACE"/>
+<part name="U$4" library="SparkFun-Aesthetics" deviceset="FOUR_LAYER_WARNING" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7389,6 +7411,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <instance part="JP4" gate="G$1" x="25.4" y="60.96"/>
 <instance part="GND12" gate="1" x="12.7" y="53.34"/>
 <instance part="SJ2" gate="1" x="114.3" y="60.96"/>
+<instance part="U$4" gate="G$1" x="147.32" y="36.068"/>
 </instances>
 <busses>
 </busses>

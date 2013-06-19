@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -999,6 +999,9 @@ We've spent an enormous amount of time creating and checking these footprints an
 <text x="0" y="2.54" size="1.778" layer="27">http://creativecommons.org/licenses/by-sa/3.0</text>
 <text x="11.43" y="0" size="1.778" layer="27">Designed by:</text>
 </package>
+<package name="FOUR_LAYER_WARNING">
+<text x="0" y="0" size="1.27" layer="51">THIS IS A FOUR-LAYER BOARD!</text>
+</package>
 </packages>
 </library>
 <library name="SparkFun-Passives">
@@ -1380,6 +1383,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <element name="JP3" library="SparkFun-Connectors" package="2X3-SHROUDED" value="" x="50.8" y="39.37" rot="R270"/>
 <element name="JP4" library="SparkFun-Connectors" package="2X3-SHROUDED" value="" x="66.04" y="39.37" rot="R90"/>
 <element name="SJ2" library="SparkFun-Passives" package="SJ_2S-TRACE" value="SOLDERJUMPERTRACE" x="39.37" y="21.717" rot="R270"/>
+<element name="U$4" library="SparkFun-Aesthetics" package="FOUR_LAYER_WARNING" value="FOUR_LAYER_WARNING" x="0" y="-2.54"/>
 </elements>
 <signals>
 <signal name="5V">
