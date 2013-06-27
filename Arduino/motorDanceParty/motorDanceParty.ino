@@ -3,6 +3,8 @@
 // include the SPI library:
 #include <SPI.h>
 
+#include "notes.h"
+
 #define SS0              10  // Wire this to the CSN pin
 #define SS1              9
 #define SS2              8

@@ -1,6 +1,6 @@
 //dSPIN_main.ino - Contains the setup() and loop() functions.
 
-float testSpeed = 10;
+int stepDir = 1;
 
 void setup() 
 {
@@ -19,32 +19,100 @@ void setup()
  
 }
 
+#define beatLength 600
+#define WN      beatLength*4
+#define HN      beatLength*2
+#define QN      beatLength
+#define EN      beatLength/2
+#define SN      beatLength/4
+
 // Test jig behavior- rotate one full revolution forward, then one full revolution
 //  backwards, then slowly tick forwards until the hard stop button is pressed.
 void loop()
 {
-  // 200 steps is one revolution on a 1.8 deg/step motor.
-  dSPIN_Move(FWD, 400,0);
-  dSPIN_Move(FWD, 400,1);
-  dSPIN_Move(FWD, 400,2);
-  while (digitalRead(dSPIN_BUSYN) == LOW);  // Until the movement completes, the
-                                            //  BUSYN pin will be low.
-  dSPIN_SoftStop(0);
-  dSPIN_SoftStop(1);
-  dSPIN_SoftStop(2);
+  delay(EN);
+  playNote(noteE5, EN);
+  playNote(noteA5, EN);
+  playNote(noteB5, EN);
+  playNote(noteCs6, EN+SN);
+  playNote(noteD6, SN);
+  playNote(noteCs6, QN);
   
-  delay(500);
+  delay(EN);
+  playNote(noteA5, EN);
+  playNote(noteA5, EN);
+  playNote(noteE5, EN);
+  playNote(noteB5, EN);
+  playNote(noteA5, EN);
+  playNote(noteG5, EN);
+  playNote(noteA5, EN);
   
-  dSPIN_Run(FWD, 500, 0);
-  dSPIN_Run(FWD, 500, 1);
-  dSPIN_Run(FWD, 500, 2);
-  delay(2500);
-  dSPIN_SoftStop(0);
-  dSPIN_SoftStop(1);
-  dSPIN_SoftStop(2);
+  delay(EN+SN);
+  playNote(noteE5, SN);
+  playNote(noteA5, EN);
+  playNote(noteB5, EN);
+  playNote(noteCs6, EN);
+  playNote(noteD6, EN);
+  playNote(noteCs6, EN);
+  playNote(noteB5, EN);
+  
+  playNote(noteA5, QN);
+  playNote(noteB5, EN);
+  playNote(noteG5, EN);
+  playNote(noteG5, QN);
+  delay(HN);
+  
+  delay(EN);
+  playNote(noteE5, EN);
+  playNote(noteA5, EN);
+  playNote(noteB5, EN);
+  playNote(noteCs6,EN+SN);
+  playNote(noteD6,SN);
+  playNote(noteCs6, QN);
+  
+  delay(EN);
+  playNote(noteA5, EN);
+  playNote(noteA5, EN);
+  playNote(noteE5, EN);
+  playNote(noteB5, EN);
+  playNote(noteA5, EN);
+  playNote(noteG5, EN);
+  playNote(noteA5, EN);
+  
+  delay(EN);
+  playNote(noteE5, EN);
+  playNote(noteA5, EN);
+  playNote(noteB5, EN);
+  playNote(noteCs6, EN);
+  playNote(noteD6, EN);
+  playNote(noteCs6, EN);
+  playNote(noteB5, EN);
+  
+  playNote(noteA5, QN);
+  playNote(noteFs6, QN);
+  playNote(noteE6, EN);
+  playNote(noteCs6, EN);
+  playNote(noteB5, EN);
+  playNote(noteAs5, EN+SN);
   
   while(1);
 }
+
+void playNote(int note, int duration)
+{
+  if (stepDir == 1) dSPIN_Run(FWD, note*4, 0);
+  else             dSPIN_Run(REV, note*4, 0);
+  if (stepDir == 1) dSPIN_Run(FWD, note*4, 2);
+  else             dSPIN_Run(REV, note*4, 2);
+  if (stepDir == 1) dSPIN_Run(REV, note*4, 1);
+  else             dSPIN_Run(FWD, note*4, 1);
+  delay(duration);
+  stepDir*=-1;
+  dSPIN_SoftStop(0);
+  dSPIN_SoftStop(1);
+  dSPIN_SoftStop(2);
+}
+  
 
 // Chip inits for all the chips.
 void init_dSPIN(byte chip)
@@ -71,26 +139,27 @@ void init_dSPIN(byte chip)
   //   - dSPIN_SYNC_SEL_x is the ratio of (micro)steps to toggles on the
   //     BUSY/SYNC pin (when that pin is used for SYNC). Make it 1:1, despite
   //     not using that pin.
-  dSPIN_SetParam(dSPIN_STEP_MODE, !dSPIN_SYNC_EN | dSPIN_STEP_SEL_1 | dSPIN_SYNC_SEL_1,chip);
+  dSPIN_SetParam(dSPIN_STEP_MODE, !dSPIN_SYNC_EN | dSPIN_STEP_SEL_1_4 | dSPIN_SYNC_SEL_1,chip);
   // Configure the MAX_SPEED register- this is the maximum number of (micro)steps per
   //  second allowed. You'll want to mess around with your desired application to see
   //  how far you can push it before the motor starts to slip. The ACTUAL parameter
   //  passed to this function is in steps/tick; MaxSpdCalc() will convert a number of
   //  steps/s into an appropriate value for this function. Note that for any move or
   //  goto type function where no speed is specified, this value will be used.
-  dSPIN_SetParam(dSPIN_MAX_SPEED, MaxSpdCalc(400),chip);
+  dSPIN_SetParam(dSPIN_MAX_SPEED, MaxSpdCalc(10000),chip);
   // Configure the FS_SPD register- this is the speed at which the driver ceases
   //  microstepping and goes to full stepping. FSCalc() converts a value in steps/s
   //  to a value suitable for this register; to disable full-step switching, you
   //  can pass 0x3FF to this register.
-  dSPIN_SetParam(dSPIN_FS_SPD, FSCalc(400),chip);
+  dSPIN_SetParam(dSPIN_FS_SPD, FSCalc(10000),chip);
   // Configure the acceleration rate, in steps/tick/tick. There is also a DEC register;
   //  both of them have a function (AccCalc() and DecCalc() respectively) that convert
   //  from steps/s/s into the appropriate value for the register. Writing ACC to 0xfff
   //  sets the acceleration and deceleration to 'infinite' (or as near as the driver can
   //  manage). If ACC is set to 0xfff, DEC is ignored. To get infinite deceleration
   //  without infinite acceleration, only hard stop will work.
-  dSPIN_SetParam(dSPIN_ACC, 0xfff,chip);
+  dSPIN_SetParam(dSPIN_ACC, 0x1ff,chip);
+  dSPIN_SetParam(dSPIN_DEC, 0x1ff,chip);
   // Configure the overcurrent detection threshold. The constants for this are defined
   //  in the dSPIN_example.ino file.
   dSPIN_SetParam(dSPIN_OCD_TH, dSPIN_OCD_TH_6000mA,chip);
