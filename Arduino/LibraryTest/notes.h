@@ -1,3 +1,5 @@
+// Frequencies for pretty much an entire piano keyboard. 
+
 #define noteC0 16
 #define noteCs0 17
 #define noteDb0 17
