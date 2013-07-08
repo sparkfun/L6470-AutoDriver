@@ -6402,6 +6402,20 @@ We've spent an enormous amount of time creating and checking these footprints an
 <package name="FOUR_LAYER_WARNING">
 <text x="0" y="0" size="1.27" layer="51">THIS IS A FOUR-LAYER BOARD!</text>
 </package>
+<package name="FIDUCIAL-1.5X3">
+<circle x="0" y="0" radius="0.9055" width="1.27" layer="29"/>
+<smd name="1" x="0" y="0" dx="1.5" dy="1.5" layer="1" roundness="100" cream="no"/>
+</package>
+<package name="FIDUCIAL-1X2">
+<smd name="1" x="0" y="0" dx="1" dy="1" layer="1" roundness="100" cream="no"/>
+</package>
+<package name="FIDUCIAL-1X2.5">
+<circle x="0" y="0" radius="0.9" width="1.27" layer="29"/>
+<smd name="1" x="0" y="0" dx="1" dy="1" layer="1" roundness="100" cream="no"/>
+</package>
+<package name="MICRO-FIDUCIAL">
+<smd name="1" x="0" y="0" dx="0.635" dy="0.635" layer="1" roundness="100" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="LETTER_L">
@@ -6451,6 +6465,11 @@ We've spent an enormous amount of time creating and checking these footprints an
 <symbol name="FOUR_LAYER_WARNING">
 <text x="0" y="0" size="1.778" layer="94">THIS IS A FOUR-LAYER BOARD!</text>
 </symbol>
+<symbol name="FIDUCIAL">
+<wire x1="-0.762" y1="0.762" x2="0.762" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0.762" x2="-0.762" y2="-0.762" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="FRAME-LETTER" prefix="FRAME">
@@ -6490,6 +6509,35 @@ four-layer PCB.</description>
 </gates>
 <devices>
 <device name="" package="FOUR_LAYER_WARNING">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FIDUCIAL" prefix="FID">
+<description>&lt;b&gt;Fiducial Alignment Points&lt;/b&gt;
+Various fiducial points for machine vision alignment.</description>
+<gates>
+<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="1.5X3" package="FIDUCIAL-1.5X3">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="1X2" package="FIDUCIAL-1X2">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="1X2.5" package="FIDUCIAL-1X2.5">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="UFIDUCIAL" package="MICRO-FIDUCIAL">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -7270,6 +7318,8 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="GND12" library="SparkFun" deviceset="GND" device=""/>
 <part name="SJ2" library="SparkFun-Passives" deviceset="2PT_GND_TIE" device=""/>
 <part name="U$4" library="SparkFun-Aesthetics" deviceset="FOUR_LAYER_WARNING" device=""/>
+<part name="FID1" library="SparkFun-Aesthetics" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
+<part name="FID2" library="SparkFun-Aesthetics" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
 </parts>
 <sheets>
 <sheet>
@@ -7372,6 +7422,8 @@ CPOL=CPHA=1
 <instance part="GND12" gate="1" x="12.7" y="53.34"/>
 <instance part="SJ2" gate="G$1" x="114.3" y="60.96"/>
 <instance part="U$4" gate="G$1" x="147.32" y="36.068"/>
+<instance part="FID1" gate="G$1" x="228.6" y="33.02"/>
+<instance part="FID2" gate="G$1" x="228.6" y="27.94"/>
 </instances>
 <busses>
 </busses>
