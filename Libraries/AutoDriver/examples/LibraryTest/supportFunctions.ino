@@ -17,13 +17,10 @@ void playNote(int note, int duration)
   else               boardA.run(REV, note/NOTE_DIVISOR);
   if (stepDir == 1)  boardB.run(REV, note/NOTE_DIVISOR);
   else               boardB.run(FWD, note/NOTE_DIVISOR);
-  if (stepDir == 1)  boardC.run(FWD, note/NOTE_DIVISOR);
-  else               boardC.run(REV, note/NOTE_DIVISOR);
   delay(duration);
   stepDir*=-1;
   boardA.softStop();
   boardB.softStop();
-  boardC.softStop();
   while (boardA.busyCheck());
 }
 
@@ -79,30 +76,5 @@ void dSPINConfig(void)
   boardB.setDecKVAL(255);
   boardB.setRunKVAL(255);
   boardB.setHoldKVAL(32);           // This controls the holding current; keep it low.
-  
-  
-  boardC.configSyncPin(BUSY_PIN, 0);// BUSY pin low during operations;
-                                    //  second paramter ignored.
-  boardC.configStepMode(STEP_FS);   // 0 microsteps per step
-  boardC.setMaxSpeed(10000);        // 10000 steps/s max
-  boardC.setFullSpeed(10000);       // microstep below 10000 steps/s
-  boardC.setAcc(10000);             // accelerate at 10000 steps/s/s
-  boardC.setDec(10000);
-  boardC.setSlewRate(SR_530V_us);
-  boardC.setOCThreshold(OC_750mA);  // OC threshold 750mA
-  boardC.setPWMFreq(PWM_DIV_2, PWM_MUL_2); // 31.25kHz PWM freq
-  boardC.setOCShutdown(OC_SD_DISABLE); // don't shutdown on OC
-  boardC.setVoltageComp(VS_COMP_DISABLE); // don't compensate for motor V
-  boardC.setSwitchMode(SW_USER);    // Switch is not hard stop
-  boardC.setOscMode(EXT_16MHZ_OSCOUT_INVERT); // for boardA, we want 16MHz
-                                    //  internal osc, 16MHz out. boardB and
-                                    //  boardC will be the same in all respects
-                                    //  but this, as they will bring in and
-                                    //  output the clock to keep them
-                                    //  all in phase.
-  boardC.setAccKVAL(255);           // We'll tinker with these later, if needed.
-  boardC.setDecKVAL(255);
-  boardC.setRunKVAL(255);
-  boardC.setHoldKVAL(32);           // This controls the holding current; keep it low.
 }
   

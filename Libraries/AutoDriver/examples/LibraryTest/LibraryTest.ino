@@ -10,21 +10,22 @@
 
 // Create our AutoDriver instances. The parameters are pin numbers in
 //  Arduino-speke for CS, reset, and busy.
-AutoDriver boardA(10, 6, 4);
-AutoDriver boardB(9, 6, 4);
-AutoDriver boardC(8, 6, 4);
+AutoDriver boardA(10, 8);
+AutoDriver boardB(14, 8);
 
 void setup()
 {
   Serial.begin(9600);
   Serial.println("Hello world");
   dSPINConfig();
+  pinMode(4, INPUT_PULLUP);
+  
 }
 
 // loop() waits for a character- any character- and then plays the song.
 void loop()
 {
-  if (Serial.available() !=0)
+  if (digitalRead(4) == LOW)
   {
     Serial.read();
     Serial.println("Poop!");
