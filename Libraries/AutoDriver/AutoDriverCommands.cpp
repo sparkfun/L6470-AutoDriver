@@ -20,18 +20,33 @@ unsigned long AutoDriver::getParam(byte param)
   return paramHandler(param, 0);
 }
 
-// Enable or disable the low-speed optimization option. If enabling,
-//  the other 12 bits of the register will be automatically zero.
-//  When disabling, the value will have to be explicitly written by
-//  the user with a SetParam() call. See the datasheet for further
-//  information about low-speed optimization.
-void AutoDriver::setLoSpdOpt(boolean enable)
+// Returns the content of the ABS_POS register, which is a signed 22-bit number
+//  indicating the number of steps the motor has traveled from the HOME
+//  position. HOME is defined by zeroing this register, and it is zero on
+//  startup.
+long AutoDriver::getPos()
 {
-  SPIXfer(SET_PARAM | MIN_SPEED);
-  if (enable) xferParam(0x1000, 13);
-  else xferParam(0, 13);
-}
+  long temp = getParam(ABS_POS);
   
+  // Since ABS_POS is a 22-bit 2's comp value, we need to check bit 21 and, if
+  //  it's set, set all the bits ABOVE 21 in order for the value to maintain
+  //  its appropriate sign.
+  if (temp & 0x00200000) temp |= 0xffC00000;
+  return temp;
+}
+
+// Just like getPos(), but for MARK.
+long AutoDriver::getMark()
+{
+  long temp = getParam(MARK);
+  
+  // Since ABS_POS is a 22-bit 2's comp value, we need to check bit 21 and, if
+  //  it's set, set all the bits ABOVE 21 in order for the value to maintain
+  //  its appropriate sign.
+  if (temp & 0x00200000) temp |= 0xffC00000;
+  return temp;
+}
+
 // RUN sets the motor spinning in a direction (defined by the constants
 //  FWD and REV). Maximum speed and minimum speed are defined
 //  by the MAX_SPEED and MIN_SPEED registers; exceeding the FS_SPD value
@@ -70,7 +85,7 @@ void AutoDriver::stepClock(byte dir)
   SPIXfer(STEP_CLOCK | dir);
 }
 
-// MOVE will send the motor n_step steps (size based on step mode) in the
+// MOVE will send the motor numStep full steps in the
 //  direction imposed by dir (FWD or REV constants may be used). The motor
 //  will accelerate according the acceleration and deceleration curves, and
 //  will run at MAX_SPEED. Stepping mode will adhere to FS_SPD value, as well.
@@ -89,7 +104,7 @@ void AutoDriver::move(byte dir, unsigned long numSteps)
 // GOTO operates much like MOVE, except it produces absolute motion instead
 //  of relative motion. The motor will be moved to the indicated position
 //  in the shortest possible fashion.
-void AutoDriver::goTo(unsigned long pos)
+void AutoDriver::goTo(long pos)
 {
   SPIXfer(GOTO);
   if (pos > 0x3FFFFF) pos = 0x3FFFFF;
@@ -102,7 +117,7 @@ void AutoDriver::goTo(unsigned long pos)
 }
 
 // Same as GOTO, but with user constrained rotational direction.
-void AutoDriver::goToDir(byte dir, unsigned long pos)
+void AutoDriver::goToDir(byte dir, long pos)
 {
   SPIXfer(GOTO_DIR | dir);
   if (pos > 0x3FFFFF) pos = 0x3FFFFF;
@@ -159,6 +174,18 @@ void AutoDriver::goHome()
 void AutoDriver::goMark()
 {
   SPIXfer(GO_MARK);
+}
+
+// setMark() and setHome() allow the user to define new MARK or
+//  ABS_POS values.
+void AutoDriver::setMark(long newMark)
+{
+  setParam(MARK, newMark);
+}
+
+void AutoDriver::setPos(long newPos)
+{
+  setParam(ABS_POS, newPos);
 }
 
 // Sets the ABS_POS register to 0, effectively declaring the current

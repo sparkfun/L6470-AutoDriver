@@ -48,6 +48,22 @@ void AutoDriver::setMaxSpeed(float stepsPerSecond)
   setParam(MAX_SPEED, integerSpeed);
 }
 
+// Set the minimum speed allowable in the system. This is the speed a motion
+//  starts with; it will then ramp up to the designated speed or the max
+//  speed, using the acceleration profile.
+void AutoDriver::setMinSpeed(float stepsPerSecond)
+{
+  // We need to convert the floating point stepsPerSecond into a value that
+  //  the dSPIN can understand. Fortunately, we have a function to do that.
+  unsigned long integerSpeed = minSpdCalc(stepsPerSecond);
+  
+  // MIN_SPEED also contains the LSPD_OPT flag, so we need to protect that.
+  unsigned long temp = getParam(MIN_SPEED) & 0x00001000;
+  
+  // Now, we can set that paramter.
+  setParam(MIN_SPEED, integerSpeed | temp);
+}
+
 // Above this threshold, the dSPIN will cease microstepping and go to full-step
 //  mode. 
 void AutoDriver::setFullSpeed(float stepsPerSecond)
@@ -184,4 +200,15 @@ void AutoDriver::setRunKVAL(byte kvalInput)
 void AutoDriver::setHoldKVAL(byte kvalInput)
 {
   setParam(KVAL_HOLD, kvalInput);
+}
+
+// Enable or disable the low-speed optimization option. With LSPD_OPT enabled,
+//  motion starts from 0 instead of MIN_SPEED and low-speed optimization keeps
+//  the driving sine wave prettier than normal until MIN_SPEED is reached.
+void AutoDriver::setLoSpdOpt(boolean enable)
+{
+  unsigned long temp = getParam(MIN_SPEED);
+  if (enable) temp |= 0x00001000; // Set the LSPD_OPT bit
+  else        temp &= 0xffffefff; // Clear the LSPD_OPT bit
+  setParam(MIN_SPEED, temp);
 }

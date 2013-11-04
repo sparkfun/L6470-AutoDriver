@@ -42,7 +42,7 @@ void AutoDriver::SPIConfig()
   //  bit 3 - CPOL (active high)
   //  bit 2 - CPHA (sample on falling edge)
   //  bit 1:0 - data rate (8 or 16, depending on SPSR0)
-  SPCR = B01011101;
+  SPCR = B01010001;
   
   // SPSR next- not much here, just SPI2X
   //  bit 0 - double clock rate (no)

@@ -31,6 +31,7 @@ class AutoDriver
     void configSyncPin(byte pinFunc, byte syncSteps);
     void configStepMode(byte stepMode);
     void setMaxSpeed(float stepsPerSecond);
+    void setMinSpeed(float stepsPerSecond);
     void setFullSpeed(float stepsPerSecond);
     void setAcc(float stepsPerSecondPerSecond);
     void setDec(float stepsPerSecondPerSecond);
@@ -47,15 +48,19 @@ class AutoDriver
     void setHoldKVAL(byte kvalInput);
     
     // ...and now, operational commands.
+    long getPos();
+    long getMark();
     void run(byte dir, float stepsPerSec);
     void stepClock(byte dir);
     void move(byte dir, unsigned long numSteps);
-    void goTo(unsigned long pos);
-    void goToDir(byte dir, unsigned long pos);
+    void goTo(long pos);
+    void goToDir(byte dir, long pos);
     void goUntil(byte action, byte dir, float stepsPerSec);
     void releaseSw(byte action, byte dir);
     void goHome();
     void goMark();
+    void setMark(long newMark);
+    void setPos(long newPos);
     void resetPos();
     void resetDev();
     void softStop();
