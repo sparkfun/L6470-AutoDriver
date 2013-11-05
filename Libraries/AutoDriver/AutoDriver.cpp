@@ -39,10 +39,10 @@ void AutoDriver::SPIConfig()
   //  bit 6 - SPI peripheral enable (enable)
   //  bit 5 - data order (MSb first)
   //  bit 4 - master/slave select (master mode)
-  //  bit 3 - CPOL (active low)
-  //  bit 2 - CPHA (sample on falling edge)
+  //  bit 3 - CPOL (active high)
+  //  bit 2 - CPHA (sample on rising edge)
   //  bit 1:0 - data rate (8 or 16, depending on SPSR0)
-  SPCR = B01010001;
+  SPCR = B01011101;
   
   // SPSR next- not much here, just SPI2X
   //  bit 0 - double clock rate (no)
