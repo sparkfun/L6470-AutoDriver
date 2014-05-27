@@ -31,7 +31,7 @@ void AutoDriver::configStepMode(byte stepMode)
   
   // Now we can OR in the new bit settings. Mask the argument so we don't
   //  accidentally the other bits, if the user sends us a non-legit value.
-  stepModeConfig |= (stepModeConfig&0x07);
+  stepModeConfig |= (stepMode&0x07);
   
   // Now push the change to the chip.
   setParam(STEP_MODE, (unsigned long)stepModeConfig);
