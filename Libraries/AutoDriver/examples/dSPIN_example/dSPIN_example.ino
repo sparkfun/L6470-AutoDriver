@@ -73,12 +73,8 @@ L6470.h - Register and pin definitions and descriptions for use
 #define MOSI             11  // Wire this to the SDI pin
 #define MISO             12  // Wire this to the SDO pin
 #define SCK              13  // Wire this to the CK pin
-#define dSPIN_RESET      6   // Wire this to the STBY line
-
-// For this example, we won't use the busy pin; if you DID want
-//  to use it, add this define and change the pin number
-//  accordingly.
-//#define dSPIN_BUSYN      16  // Wire this to the BSYN line
+#define dSPIN_RESET      17  // Wire this to the STBY line
+#define dSPIN_BUSYN      16  // Wire this to the BSYN line
 
 #define STAT1            14  // Hooked to an LED on the test jig
 #define STAT2            15  // Hooked to an LED on the test jig
