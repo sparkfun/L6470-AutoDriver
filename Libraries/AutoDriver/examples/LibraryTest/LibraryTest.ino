@@ -9,9 +9,10 @@
 
 
 // Create our AutoDriver instances. The parameters are pin numbers in
-//  Arduino-speke for CS, reset, and busy.
-AutoDriver boardA(10, 8);
-AutoDriver boardB(14, 8);
+//  Arduino-speke for CS and reset. A third parameter could be passed for
+//  a busy pin, but we're not using that here.
+AutoDriver boardA(10, 6);
+AutoDriver boardB(14, 6);
 
 void setup()
 {
@@ -25,12 +26,12 @@ void setup()
 // loop() waits for a character- any character- and then plays the song.
 void loop()
 {
-  if (digitalRead(4) == LOW)
+  if (Serial.available() !=0)
   {
     Serial.read();
-    Serial.println("Poop!");
+    Serial.println("Play it!");
     wantYouGone();
-    Serial.println("Done pooping!");
+    Serial.println("Done playing!");
   }
 }
 
