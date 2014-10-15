@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -117,7 +117,7 @@
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="cooling" color="7" fill="1" visible="no" active="yes"/>
 </layers>
-<schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
+<schematic xreflabel="%F%N/%S" xrefpart="1_/%S.%C%R">
 <libraries>
 <library name="SparkFun">
 <packages>
@@ -7053,6 +7053,35 @@ We've spent an enormous amount of time creating and checking these footprints an
 <smd name="P$2" x="0" y="-0.635" dx="1.27" dy="0.635" layer="1" stop="no" cream="no"/>
 <wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.4064" layer="1"/>
 </package>
+<package name="PAD-JUMPER-2-NC_BY_PASTE_YES_SILK">
+<wire x1="0.8" y1="-1" x2="-0.8" y2="-1" width="0.2032" layer="21"/>
+<wire x1="0.8" y1="1" x2="1" y2="0.7" width="0.2032" layer="21" curve="-90.076445"/>
+<wire x1="-1" y1="0.7" x2="-0.8" y2="1" width="0.2032" layer="21" curve="-90.03821"/>
+<wire x1="-1" y1="-0.7" x2="-0.8" y2="-1" width="0.2032" layer="21" curve="90.03821"/>
+<wire x1="0.8" y1="-1" x2="1" y2="-0.7" width="0.2032" layer="21" curve="90.03821"/>
+<wire x1="-0.8" y1="1" x2="0.8" y2="1" width="0.2032" layer="21"/>
+<smd name="1" x="-0.4009" y="0" dx="0.635" dy="1.27" layer="1" rot="R180" cream="no"/>
+<smd name="2" x="0.4127" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
+<text x="-0.9525" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-0.9525" y="-1.651" size="0.4064" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.016" y1="-1.016" x2="1.016" y2="1.016" layer="31"/>
+</package>
+<package name="PAD-JUMPER-2-NC_BY_PASTE_YES_SILK_FULL_BOX">
+<description>Small solder jumper with big paste layer so it will short during reflow.</description>
+<wire x1="0.8" y1="-1" x2="-0.8" y2="-1" width="0.1524" layer="21"/>
+<wire x1="0.8" y1="1" x2="1.1" y2="0.75" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-1.1" y1="0.75" x2="-0.8" y2="1" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-1.1" y1="-0.75" x2="-0.8" y2="-1" width="0.1524" layer="21" curve="90.114706"/>
+<wire x1="0.8" y1="-1" x2="1.1" y2="-0.75" width="0.1524" layer="21" curve="90"/>
+<wire x1="1.1" y1="-0.75" x2="1.1" y2="0.75" width="0.1524" layer="21"/>
+<wire x1="-1.1" y1="-0.75" x2="-1.1" y2="0.75" width="0.1524" layer="21"/>
+<wire x1="-0.8" y1="1" x2="0.8" y2="1" width="0.1524" layer="21"/>
+<smd name="1" x="-0.4119" y="0" dx="0.635" dy="1.27" layer="1"/>
+<smd name="2" x="0.4119" y="0" dx="0.635" dy="1.27" layer="1"/>
+<text x="-0.9498" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-0.9498" y="-1.651" size="0.4064" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.2192" y1="-1.143" x2="1.2192" y2="1.143" layer="31"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SJ_2">
@@ -7086,6 +7115,17 @@ We've spent an enormous amount of time creating and checking these footprints an
 <pin name="P$1" x="-5.08" y="0" visible="off" length="short"/>
 <pin name="P$2" x="5.08" y="0" visible="off" length="short" rot="R180"/>
 <wire x1="0" y1="2.54" x2="0" y2="-4.064" width="0.1524" layer="94" style="shortdash"/>
+</symbol>
+<symbol name="PAD-JUMPER-2-NC_BY_PASTE">
+<wire x1="0.381" y1="0.635" x2="0.381" y2="-0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="-0.381" y1="-0.635" x2="-0.381" y2="0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="2.54" y1="0" x2="1.651" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.651" y2="0" width="0.1524" layer="94"/>
+<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<circle x="0" y="0" radius="1.93440625" width="0" layer="95"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -7158,6 +7198,31 @@ We've spent an enormous amount of time creating and checking these footprints an
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="JUMPER-PAD-2-NC_BY_PASTE" prefix="SJ">
+<gates>
+<gate name="G$1" symbol="PAD-JUMPER-2-NC_BY_PASTE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PAD-JUMPER-2-NC_BY_PASTE_YES_SILK">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="FULL-BOX-SILK" package="PAD-JUMPER-2-NC_BY_PASTE_YES_SILK_FULL_BOX">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -7709,6 +7774,7 @@ Standard 10-pin dual row 0.1" header. Commonly used with AVR-ISP. Use with Spark
 <part name="U$4" library="SparkFun-Aesthetics" deviceset="FOUR_LAYER_WARNING" device=""/>
 <part name="FID1" library="SparkFun-Aesthetics" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
 <part name="FID2" library="SparkFun-Aesthetics" deviceset="FIDUCIAL" device="UFIDUCIAL"/>
+<part name="SJ3" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_PASTE" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7751,6 +7817,9 @@ CPOL=CPHA=1
 5 Mbit max</text>
 <text x="148.336" y="7.112" size="2.54" layer="94">Revised by: Patrick Alberts</text>
 <wire x1="157.48" y1="147.32" x2="154.94" y2="147.32" width="0.508" layer="94"/>
+<text x="7.62" y="10.16" size="1.778" layer="91">SJ3 is closed by default.
+Open to isolate chip select
+by board.</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="119.38" y="71.12"/>
@@ -7815,6 +7884,7 @@ CPOL=CPHA=1
 <instance part="U$4" gate="G$1" x="147.32" y="36.068"/>
 <instance part="FID1" gate="G$1" x="228.6" y="33.02"/>
 <instance part="FID2" gate="G$1" x="228.6" y="27.94"/>
+<instance part="SJ3" gate="G$1" x="20.32" y="25.4"/>
 </instances>
 <busses>
 </busses>
@@ -8165,6 +8235,11 @@ CPOL=CPHA=1
 <wire x1="35.56" y1="60.96" x2="38.1" y2="60.96" width="0.1524" layer="91"/>
 <label x="38.1" y="60.96" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="SJ3" gate="G$1" pin="1"/>
+<wire x1="15.24" y1="25.4" x2="12.7" y2="25.4" width="0.1524" layer="91"/>
+<label x="12.7" y="25.4" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="VLOGIC" class="0">
 <segment>
@@ -8350,6 +8425,18 @@ CPOL=CPHA=1
 <wire x1="210.82" y1="160.02" x2="218.44" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="152.4" x2="185.42" y2="152.4" width="0.1524" layer="91"/>
 <label x="185.42" y="152.4" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="CSN_OUT" class="0">
+<segment>
+<pinref part="JP3" gate="G$1" pin="4"/>
+<wire x1="35.56" y1="81.28" x2="38.1" y2="81.28" width="0.1524" layer="91"/>
+<label x="38.1" y="81.28" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="SJ3" gate="G$1" pin="2"/>
+<wire x1="25.4" y1="25.4" x2="27.94" y2="25.4" width="0.1524" layer="91"/>
+<label x="27.94" y="25.4" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
