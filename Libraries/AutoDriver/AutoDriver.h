@@ -46,6 +46,27 @@ class AutoDriver
     void setDecKVAL(byte kvalInput);
     void setRunKVAL(byte kvalInput);
     void setHoldKVAL(byte kvalInput);
+
+    boolean getLoSpdOpt();
+    // getSyncPin
+    byte getStepMode();
+    float getMaxSpeed();
+    float getMinSpeed();
+    float getFullSpeed();
+    float getAcc();
+    float getDec();
+    byte getOCThreshold();
+    int getPWMFreqDivisor();
+    int getPWMFreqMultiplier();
+    int getSlewRate();
+    int getOCShutdown();
+    int getVoltageComp();
+    int getSwitchMode();
+    int getOscMode();
+    byte getAccKVAL();
+    byte getDecKVAL();
+    byte getRunKVAL();
+    byte getHoldKVAL();
     
     // ...and now, operational commands.
     long getPos();
@@ -83,6 +104,16 @@ class AutoDriver
     unsigned long FSCalc(float stepsPerSec);
     unsigned long intSpdCalc(float stepsPerSec);
     unsigned long spdCalc(float stepsPerSec);
+
+    // Support functions for converting from L6470 to user units
+    float accParse(unsigned long stepsPerSecPerSec);
+    float decParse(unsigned long stepsPerSecPerSec);
+    float minSpdParse(unsigned long stepsPerSec);
+    float maxSpdParse(unsigned long stepsPerSec);
+    float FSParse(unsigned long stepsPerSec);
+    float intSpdParse(unsigned long stepsPerSec);
+    float spdParse(unsigned long stepsPerSec);
+ 
     int _CSPin;
     int _resetPin;
     int _busyPin;

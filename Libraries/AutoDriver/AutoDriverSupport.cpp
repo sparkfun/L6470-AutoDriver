@@ -15,6 +15,12 @@ unsigned long AutoDriver::accCalc(float stepsPerSecPerSec)
   else return (unsigned long) long(temp);
 }
 
+
+float AutoDriver::accParse(unsigned long stepsPerSecPerSec)
+{
+    return (float) (stepsPerSecPerSec & 0x00000FFF) / 0.137438;
+}
+
 // The calculation for DEC is the same as for ACC. Value is 0x08A on boot.
 // This is a 12-bit value, so we need to make sure the value is at or below 0xFFF.
 unsigned long AutoDriver::decCalc(float stepsPerSecPerSec)
@@ -22,6 +28,11 @@ unsigned long AutoDriver::decCalc(float stepsPerSecPerSec)
   float temp = stepsPerSecPerSec * 0.137438;
   if( (unsigned long) long(temp) > 0x00000FFF) return 0x00000FFF;
   else return (unsigned long) long(temp);
+}
+
+float AutoDriver::decParse(unsigned long stepsPerSecPerSec)
+{
+    return (float) (stepsPerSecPerSec & 0x00000FFF) / 0.137438;
 }
 
 // The value in the MAX_SPD register is [(steps/s)*(tick)]/(2^-18) where tick is 
@@ -35,6 +46,12 @@ unsigned long AutoDriver::maxSpdCalc(float stepsPerSec)
   else return temp;
 }
 
+
+float AutoDriver::maxSpdParse(unsigned long stepsPerSec)
+{
+    return (float) (stepsPerSec & 0x000003FF) / 0.065536;
+}
+
 // The value in the MIN_SPD register is [(steps/s)*(tick)]/(2^-24) where tick is 
 //  250ns (datasheet value)- 0x000 on boot.
 // Multiply desired steps/s by 4.1943 to get an appropriate value for this register
@@ -44,6 +61,11 @@ unsigned long AutoDriver::minSpdCalc(float stepsPerSec)
   float temp = stepsPerSec * 4.1943;
   if( (unsigned long) long(temp) > 0x00000FFF) return 0x00000FFF;
   else return (unsigned long) long(temp);
+}
+
+float AutoDriver::minSpdParse(unsigned long stepsPerSec)
+{
+    return (float) (stepsPerSec & 0x00000FFF) / 4.1943;
 }
 
 // The value in the FS_SPD register is ([(steps/s)*(tick)]/(2^-18))-0.5 where tick is 
@@ -57,6 +79,11 @@ unsigned long AutoDriver::FSCalc(float stepsPerSec)
   else return (unsigned long) long(temp);
 }
 
+float AutoDriver::FSParse(unsigned long stepsPerSec)
+{
+    return (((float) (stepsPerSec & 0x000003FF)) + 0.5) / 0.065536;
+}
+
 // The value in the INT_SPD register is [(steps/s)*(tick)]/(2^-24) where tick is 
 //  250ns (datasheet value)- 0x408 on boot.
 // Multiply desired steps/s by 4.1943 to get an appropriate value for this register
@@ -68,6 +95,11 @@ unsigned long AutoDriver::intSpdCalc(float stepsPerSec)
   else return (unsigned long) long(temp);
 }
 
+float AutoDriver::intSpdParse(unsigned long stepsPerSec)
+{
+    return (float) (stepsPerSec & 0x00003FFF) / 4.1943;
+}
+
 // When issuing RUN command, the 20-bit speed is [(steps/s)*(tick)]/(2^-28) where tick is 
 //  250ns (datasheet value).
 // Multiply desired steps/s by 67.106 to get an appropriate value for this register
@@ -77,6 +109,11 @@ unsigned long AutoDriver::spdCalc(float stepsPerSec)
   float temp = stepsPerSec * 67.106;
   if( (unsigned long) long(temp) > 0x000FFFFF) return 0x000FFFFF;
   else return (unsigned long)temp;
+}
+
+float AutoDriver::spdParse(unsigned long stepsPerSec)
+{
+    return (float) (stepsPerSec & 0x000FFFFF) / 67.106;
 }
 
 // Much of the functionality between "get parameter" and "set parameter" is

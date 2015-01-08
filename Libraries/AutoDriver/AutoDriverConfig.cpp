@@ -37,6 +37,10 @@ void AutoDriver::configStepMode(byte stepMode)
   setParam(STEP_MODE, (unsigned long)stepModeConfig);
 }
 
+byte AutoDriver::getStepMode() {
+  return (byte)(getParam(STEP_MODE) & 0x07);
+}
+
 // This is the maximum speed the dSPIN will attempt to produce.
 void AutoDriver::setMaxSpeed(float stepsPerSecond)
 {
@@ -46,6 +50,12 @@ void AutoDriver::setMaxSpeed(float stepsPerSecond)
   
   // Now, we can set that paramter.
   setParam(MAX_SPEED, integerSpeed);
+}
+
+
+float AutoDriver::getMaxSpeed()
+{
+  return maxSpdParse(getParam(MAX_SPEED));
 }
 
 // Set the minimum speed allowable in the system. This is the speed a motion
@@ -64,12 +74,22 @@ void AutoDriver::setMinSpeed(float stepsPerSecond)
   setParam(MIN_SPEED, integerSpeed | temp);
 }
 
+float AutoDriver::getMinSpeed()
+{
+  return minSpdParse(getParam(MIN_SPEED));
+}
+
 // Above this threshold, the dSPIN will cease microstepping and go to full-step
 //  mode. 
 void AutoDriver::setFullSpeed(float stepsPerSecond)
 {
   unsigned long integerSpeed = FSCalc(stepsPerSecond);
   setParam(FS_SPD, integerSpeed);
+}
+
+float AutoDriver::getFullSpeed()
+{
+  return FSParse(getParam(FS_SPD));
 }
 
 // Set the acceleration rate, in steps per second per second. This value is
@@ -81,6 +101,11 @@ void AutoDriver::setAcc(float stepsPerSecondPerSecond)
   setParam(ACC, integerAcc);
 }
 
+float AutoDriver::getAcc()
+{
+  return accParse(getParam(ACC));
+}
+
 // Same rules as setAcc().
 void AutoDriver::setDec(float stepsPerSecondPerSecond)
 {
@@ -88,9 +113,19 @@ void AutoDriver::setDec(float stepsPerSecondPerSecond)
   setParam(DECEL, integerDec);
 }
 
+float AutoDriver::getDec()
+{
+  return accParse(getParam(DECEL));
+}
+
 void AutoDriver::setOCThreshold(byte threshold)
 {
   setParam(OCD_TH, 0x0F & threshold);
+}
+
+byte AutoDriver::getOCThreshold()
+{
+  return (byte) (getParam(OCD_TH) & 0xF);
 }
 
 // The next few functions are all breakouts for individual options within the
@@ -114,6 +149,16 @@ void AutoDriver::setPWMFreq(int divisor, int multiplier)
   setParam(CONFIG, configVal);
 }
 
+int AutoDriver::getPWMFreqDivisor()
+{
+  return (int) (getParam(CONFIG) & 0xE000);
+}
+
+int AutoDriver::getPWMFreqMultiplier()
+{
+  return (int) (getParam(CONFIG) & 0x1C00);
+}
+
 // Slew rate of the output in V/us. Can be 180, 290, or 530.
 void AutoDriver::setSlewRate(int slewRate)
 {
@@ -126,6 +171,11 @@ void AutoDriver::setSlewRate(int slewRate)
   setParam(CONFIG, configVal);
 }
 
+int AutoDriver::getSlewRate()
+{
+  return (int) (getParam(CONFIG) & 0x0300);
+}
+
 // Single bit- do we shutdown the drivers on overcurrent or not?
 void AutoDriver::setOCShutdown(int OCShutdown)
 {
@@ -135,6 +185,11 @@ void AutoDriver::setOCShutdown(int OCShutdown)
   //Now, OR in the masked incoming value.
   configVal |= (0x0800&OCShutdown);
   setParam(CONFIG, configVal);
+}
+
+int AutoDriver::getOCShutdown()
+{
+  return (int) (getParam(CONFIG) & 0x0800);
 }
 
 // Enable motor voltage compensation? Not at all straightforward- check out
@@ -149,6 +204,11 @@ void AutoDriver::setVoltageComp(int vsCompMode)
   setParam(CONFIG, configVal);
 }
 
+int AutoDriver::getVoltageComp()
+{
+  return (int) (getParam(CONFIG) & 0x0200);
+}
+
 // The switch input can either hard-stop the driver _or_ activate an interrupt.
 //  This bit allows you to select what it does.
 void AutoDriver::setSwitchMode(int switchMode)
@@ -159,6 +219,11 @@ void AutoDriver::setSwitchMode(int switchMode)
   //Now, OR in the masked incoming value.
   configVal |= (0x0100&switchMode);
   setParam(CONFIG, configVal);
+}
+
+int AutoDriver::getSwitchMode()
+{
+  return (int) (getParam(CONFIG) & 0x0100);
 }
 
 // There are a number of clock options for this chip- it can be configured to
@@ -177,6 +242,11 @@ void AutoDriver::setOscMode(int oscillatorMode)
   setParam(CONFIG, configVal);
 }
 
+int AutoDriver::getOscMode()
+{
+  return (int) (getParam(CONFIG) & 0x000F);
+}
+
 // The KVAL registers are...weird. I don't entirely understand how they differ
 //  from the microstepping, but if you have trouble getting the motor to run,
 //  tweaking KVAL has proven effective in the past. There's a separate register
@@ -187,9 +257,19 @@ void AutoDriver::setAccKVAL(byte kvalInput)
   setParam(KVAL_ACC, kvalInput);
 }
 
+byte AutoDriver::getAccKVAL()
+{
+  return (byte) getParam(KVAL_ACC);
+}
+
 void AutoDriver::setDecKVAL(byte kvalInput)
 {
   setParam(KVAL_DEC, kvalInput);
+}
+
+byte AutoDriver::getDecKVAL()
+{
+  return (byte) getParam(KVAL_DEC);
 }
 
 void AutoDriver::setRunKVAL(byte kvalInput)
@@ -197,9 +277,19 @@ void AutoDriver::setRunKVAL(byte kvalInput)
   setParam(KVAL_RUN, kvalInput);
 }
 
+byte AutoDriver::getRunKVAL()
+{
+  return (byte) getParam(KVAL_RUN);
+}
+
 void AutoDriver::setHoldKVAL(byte kvalInput)
 {
   setParam(KVAL_HOLD, kvalInput);
+}
+
+byte AutoDriver::getHoldKVAL()
+{
+  return (byte) getParam(KVAL_HOLD);
 }
 
 // Enable or disable the low-speed optimization option. With LSPD_OPT enabled,
@@ -211,4 +301,10 @@ void AutoDriver::setLoSpdOpt(boolean enable)
   if (enable) temp |= 0x00001000; // Set the LSPD_OPT bit
   else        temp &= 0xffffefff; // Clear the LSPD_OPT bit
   setParam(MIN_SPEED, temp);
+}
+
+boolean AutoDriver::getLoSpdOpt()
+{
+  unsigned long temp = getParam(MIN_SPEED);
+  return (boolean) (getParam(MIN_SPEED) & 0x00001000);
 }
