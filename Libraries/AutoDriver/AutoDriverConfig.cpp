@@ -181,15 +181,15 @@ void AutoDriver::setOCShutdown(int OCShutdown)
 {
   unsigned long configVal = getParam(CONFIG);
   // This bit is CONFIG 7, mask is 0x0080
-  configVal &= ~(0x0800);
+  configVal &= ~(0x0080);
   //Now, OR in the masked incoming value.
-  configVal |= (0x0800&OCShutdown);
+  configVal |= (0x0080&OCShutdown);
   setParam(CONFIG, configVal);
 }
 
 int AutoDriver::getOCShutdown()
 {
-  return (int) (getParam(CONFIG) & 0x0800);
+  return (int) (getParam(CONFIG) & 0x0080);
 }
 
 // Enable motor voltage compensation? Not at all straightforward- check out
@@ -198,15 +198,15 @@ void AutoDriver::setVoltageComp(int vsCompMode)
 {
   unsigned long configVal = getParam(CONFIG);
   // This bit is CONFIG 5, mask is 0x0020
-  configVal &= ~(0x0200);
+  configVal &= ~(0x0020);
   //Now, OR in the masked incoming value.
-  configVal |= (0x0200&vsCompMode);
+  configVal |= (0x0020&vsCompMode);
   setParam(CONFIG, configVal);
 }
 
 int AutoDriver::getVoltageComp()
 {
-  return (int) (getParam(CONFIG) & 0x0200);
+  return (int) (getParam(CONFIG) & 0x0020);
 }
 
 // The switch input can either hard-stop the driver _or_ activate an interrupt.
@@ -305,6 +305,5 @@ void AutoDriver::setLoSpdOpt(boolean enable)
 
 boolean AutoDriver::getLoSpdOpt()
 {
-  unsigned long temp = getParam(MIN_SPEED);
-  return (boolean) (getParam(MIN_SPEED) & 0x00001000);
+  return (boolean) ((getParam(MIN_SPEED) & 0x00001000) != 0);
 }

@@ -180,7 +180,7 @@ unsigned long AutoDriver::paramHandler(byte param, unsigned long value)
     // MinSpdCalc() function exists to convert steps/s value into a 12-bit value for this
     //  register. SetLSPDOpt() function exists to enable/disable the optimization feature.
     case MIN_SPEED: 
-      retVal = xferParam(value, 12);
+      retVal = xferParam(value, 13);
       break;
     // FS_SPD register contains a threshold value above which microstepping is disabled
     //  and the dSPIN operates in full-step mode. Defaults to 0x027 on power up.
