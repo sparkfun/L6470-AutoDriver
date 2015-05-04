@@ -1,4 +1,5 @@
 #include "AutoDriver.h"
+#include <SPI.h>
 
 // AutoDriverSupport.cpp - Contains utility functions for converting real-world 
 //  units (eg, steps/s) to values usable by the dsPIN controller. These are all
@@ -298,7 +299,7 @@ unsigned long AutoDriver::xferParam(unsigned long value, byte bitLen)
   if (value > mask) value = mask;
   
   byte* bytePointer = (byte*)&value;
-  for (char i = byteLen-1; i >= 0; i--)
+  for (signed char i = byteLen-1; i >= 0; i--)
   {
     bytePointer[i] = SPIXfer(bytePointer[i]);
   }
@@ -306,20 +307,16 @@ unsigned long AutoDriver::xferParam(unsigned long value, byte bitLen)
   return value;
 }
 
-// SPIXfer() accepts a byte  and a number of bytes to transfer to
-//  the L6470, then returns any data received. A *very* important
-//  note regarding chip select- holding the CS line low results in data being
-//  shifted THROUGH the chip, not into it. To latch data, CS must be released
-//  after each byte. I can't find a reference to this in the datasheet, which
-//  is AWESOME, and I've personally discovered it at least twice.
+SPISettings settings(5000000, MSBFIRST, SPI_MODE3);
+
 byte AutoDriver::SPIXfer(byte data)
 {
   byte rxData;
+  SPI.beginTransaction(settings);
   digitalWrite(_CSPin, LOW);
-  SPDR = data;
-  while (!(SPSR&(1<<SPIF)));
-  rxData = SPSR;
-  rxData = SPDR;
+  rxData = SPI.transfer(data); 
   digitalWrite(_CSPin, HIGH);
+  SPI.endTransaction();
   return rxData;
 }
+
