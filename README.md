@@ -3,9 +3,7 @@ AutoDriver
 [![AutoDriver](https://dlnmh9ip6v2uc.cloudfront.net/images/products/1/1/6/1/1/11611-01_medium.jpg)  
 *AutoDriver (BOB-11611)*](https://www.sparkfun.com/products/11611)
 
-This AutoDriver allows you to use the L6470 Stepper Driver in your project. 
-This is a 3A, 8-45V bipolar stepper motor driver that works with SPI communication.
-
+The AutoDriver is a bipolar stepper driver based on the ST Micro L6470 chip. It allows a processor to control a single 3A bipolar stepper motor across an 8-45V supply range.
 
 Repository Contents
 -------------------
