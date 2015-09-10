@@ -18504,7 +18504,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND6" library="SparkFun" deviceset="GND" device=""/>
 <part name="D1" library="SparkFun-DiscreteSemi" deviceset="BAV99" device="" value="BAV99"/>
 <part name="C6" library="SparkFun-Capacitors" deviceset="10NF/10000PF-50V-10%(0603)" device="" value="10nF"/>
-<part name="C5" library="SparkFun-Capacitors" deviceset="10NF/10000PF-50V-10%(0603)" device="" value="10nF"/>
+<part name="C5" library="SparkFun-Capacitors" deviceset="0.22UF50V-20%,+80%(0603)" device="" value="0.22uF"/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="0.22UF50V-20%,+80%(0603)" device="" value="0.22uF"/>
 <part name="C3" library="SparkFun-Capacitors" deviceset="100UF-63V-20%(ELECT)" device="" value="100uF"/>
 <part name="P+2" library="SparkFun" deviceset="VCC" device="" value="VS"/>
@@ -18617,7 +18617,10 @@ by board.</text>
 <instance part="GND6" gate="1" x="124.46" y="134.62"/>
 <instance part="D1" gate="G$1" x="193.04" y="99.06" rot="R270"/>
 <instance part="C6" gate="G$1" x="177.8" y="99.06" rot="R270"/>
-<instance part="C5" gate="G$1" x="205.74" y="99.06" rot="R180"/>
+<instance part="C5" gate="G$1" x="205.74" y="99.06" smashed="yes" rot="R180">
+<attribute name="NAME" x="204.216" y="96.139" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="207.264" y="94.361" size="1.778" layer="96"/>
+</instance>
 <instance part="C4" gate="G$1" x="48.26" y="15.24"/>
 <instance part="C3" gate="G$1" x="30.48" y="17.78"/>
 <instance part="P+2" gate="1" x="30.48" y="30.48"/>
