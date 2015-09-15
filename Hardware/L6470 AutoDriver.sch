@@ -18563,7 +18563,7 @@ Input</text>
 Connector</text>
 <text x="79.756" y="9.906" size="1.778" layer="94">Ground
 Connector</text>
-<text x="139.7" y="157.48" size="1.778" layer="97">SJ1 allows user to
+<text x="149.86" y="157.48" size="1.778" layer="97">SJ1 allows user to
 select external power
 over comm headers
 or internal 3.3V power.
@@ -18588,11 +18588,7 @@ datasheet p36 for details.</text>
 SPI mode 3:
 CPOL=CPHA=1
 5 Mbit max</text>
-<text x="148.59" y="5.842" size="2.54" layer="94">Revised by: Patrick Alberts</text>
 <wire x1="157.48" y1="147.32" x2="154.94" y2="147.32" width="0.508" layer="94"/>
-<text x="5.08" y="43.18" size="1.778" layer="97">SJ3 is closed by default.
-Open to isolate chip select
-by board.</text>
 <wire x1="0" y1="40.64" x2="73.66" y2="40.64" width="0.3048" layer="97" style="longdash"/>
 <wire x1="73.66" y1="40.64" x2="73.66" y2="185.42" width="0.3048" layer="97" style="longdash"/>
 <wire x1="147.32" y1="35.56" x2="73.66" y2="35.56" width="0.3048" layer="97" style="longdash"/>
@@ -18601,6 +18597,12 @@ by board.</text>
 </text>
 <text x="3.048" y="37.084" size="2.54" layer="97">Vs must be between 8V and 45V</text>
 <text x="238.76" y="7.62" size="2.54" layer="94">12</text>
+<text x="76.2" y="167.64" size="1.778" layer="97">SJ4 allows you to route the SDO (serial 
+data out) either to the next board (if this 
+board is in a chain) or back to the previous 
+board (if this board is the last or only board 
+in the chain). It defaults to back to previous 
+board, for single board applications.</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="119.38" y="71.12"/>
@@ -18674,8 +18676,8 @@ by board.</text>
 </instance>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="V" x="147.32" y="0"/>
-<instance part="SJ4" gate="G$1" x="101.6" y="170.18" smashed="yes" rot="R90">
-<attribute name="NAME" x="99.822" y="172.085" size="1.778" layer="95"/>
+<instance part="SJ4" gate="G$1" x="101.6" y="162.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="99.822" y="164.465" size="1.778" layer="95"/>
 </instance>
 </instances>
 <busses>
@@ -19220,8 +19222,8 @@ by board.</text>
 </segment>
 <segment>
 <pinref part="SJ4" gate="G$1" pin="3"/>
-<wire x1="106.68" y1="170.18" x2="109.22" y2="170.18" width="0.1524" layer="91"/>
-<label x="109.22" y="170.18" size="1.27" layer="95" xref="yes"/>
+<wire x1="106.68" y1="162.56" x2="109.22" y2="162.56" width="0.1524" layer="91"/>
+<label x="109.22" y="162.56" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="SDO" class="0">
@@ -19232,9 +19234,9 @@ by board.</text>
 </segment>
 <segment>
 <pinref part="SJ4" gate="G$1" pin="2"/>
-<wire x1="101.6" y1="165.1" x2="101.6" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="162.56" x2="109.22" y2="162.56" width="0.1524" layer="91"/>
-<label x="109.22" y="162.56" size="1.27" layer="95" xref="yes"/>
+<wire x1="101.6" y1="157.48" x2="101.6" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="154.94" x2="109.22" y2="154.94" width="0.1524" layer="91"/>
+<label x="109.22" y="154.94" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="SDO_DOWNSTREAM" class="0">
@@ -19245,8 +19247,8 @@ by board.</text>
 </segment>
 <segment>
 <pinref part="SJ4" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="170.18" x2="93.98" y2="170.18" width="0.1524" layer="91"/>
-<label x="93.98" y="170.18" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="96.52" y1="162.56" x2="93.98" y2="162.56" width="0.1524" layer="91"/>
+<label x="93.98" y="162.56" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
