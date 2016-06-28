@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.3.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -149,7 +149,7 @@
 <layer number="254" name="cooling" color="7" fill="1" visible="no" active="yes"/>
 <layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
-<schematic xreflabel="%F%N/%S" xrefpart="1_/%S.%C%R">
+<schematic xreflabel="%F%N/%S" xrefpart="/%S.%C%R">
 <libraries>
 <library name="SparkFun">
 <packages>
@@ -827,7 +827,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-1.473" y1="-0.983" x2="-1.473" y2="0.983" width="0.0508" layer="39"/>
 <wire x1="-0.356" y1="0.432" x2="0.356" y2="0.432" width="0.1016" layer="51"/>
 <wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
-<wire x1="0" y1="0.0305" x2="0" y2="-0.0305" width="0.5588" layer="21"/>
+<wire x1="0" y1="0.027940625" x2="0" y2="-0.027940625" width="0.381" layer="21"/>
 <smd name="1" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
 <smd name="2" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
 <text x="-0.889" y="0.762" size="0.4064" layer="25" font="vector">&gt;NAME</text>
@@ -852,8 +852,8 @@ We've spent an enormous amount of time creating and checking these footprints an
 <text x="0.408" y="1.332" size="0.4064" layer="27">&gt;VALUE</text>
 </package>
 <package name="NIC_10X10.5_CAP">
-<smd name="+" x="4.5" y="0" dx="4.5" dy="2.5" layer="1"/>
-<smd name="-" x="-4.5" y="0" dx="4.5" dy="2.5" layer="1"/>
+<smd name="+" x="4.5" y="0" dx="4.5" dy="1.5" layer="1"/>
+<smd name="-" x="-4.5" y="0" dx="4.5" dy="1.5" layer="1"/>
 <wire x1="-5.5" y1="-5.5" x2="3.5" y2="-5.5" width="0.2032" layer="21"/>
 <wire x1="-5.5" y1="5.5" x2="3.5" y2="5.5" width="0.2032" layer="21"/>
 <wire x1="3.5" y1="5.5" x2="5.5" y2="3.5" width="0.2032" layer="21"/>
@@ -864,6 +864,8 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="5.5" y1="-3.5" x2="5.5" y2="-1.5" width="0.2032" layer="21"/>
 <wire x1="-5.5" y1="-5.5" x2="-5.5" y2="-1.5" width="0.2032" layer="21"/>
 <wire x1="-5.5" y1="1.5" x2="-5.5" y2="5.5" width="0.2032" layer="21"/>
+<text x="-3.175" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.81" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="EIA3528">
 <wire x1="-0.9" y1="-1.6" x2="-2.6" y2="-1.6" width="0.2032" layer="21"/>
@@ -18549,7 +18551,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="LOGO2" library="SparkFun-Aesthetics" deviceset="SFE_LOGO_NAME_FLAME" device=".2_INCH"/>
 <part name="TP1" library="SparkFun-Passives" deviceset="TEST-POINT" device="TP_15TH_THRU"/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
-<part name="SJ4" library="SparkFun-Passives" deviceset="JUMPER-PAD-3-2OF3_NC_BY_PASTE" device=""/>
+<part name="SJ3" library="SparkFun-Passives" deviceset="JUMPER-PAD-3-2OF3_NC_BY_PASTE" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18589,15 +18591,17 @@ SPI mode 3:
 CPOL=CPHA=1
 5 Mbit max</text>
 <wire x1="157.48" y1="147.32" x2="154.94" y2="147.32" width="0.508" layer="94"/>
-<wire x1="0" y1="40.64" x2="73.66" y2="40.64" width="0.3048" layer="97" style="longdash"/>
-<wire x1="73.66" y1="40.64" x2="73.66" y2="185.42" width="0.3048" layer="97" style="longdash"/>
+<wire x1="0" y1="53.34" x2="73.66" y2="53.34" width="0.3048" layer="97" style="longdash"/>
+<wire x1="73.66" y1="53.34" x2="73.66" y2="185.42" width="0.3048" layer="97" style="longdash"/>
 <wire x1="147.32" y1="35.56" x2="73.66" y2="35.56" width="0.3048" layer="97" style="longdash"/>
-<wire x1="73.66" y1="35.56" x2="73.66" y2="40.64" width="0.3048" layer="97" style="longdash"/>
+<wire x1="73.66" y1="35.56" x2="73.66" y2="53.34" width="0.3048" layer="97" style="longdash"/>
 <text x="172.72" y="7.62" size="2.54" layer="94">Mike Hord
 </text>
-<text x="3.048" y="37.084" size="2.54" layer="97">Vs must be between 8V and 45V</text>
+<text x="3.048" y="42.164" size="2.54" layer="97">Vs must be between 8V and 45V
+Motor supply must be enabled
+for chip comms to work!</text>
 <text x="238.76" y="7.62" size="2.54" layer="94">12</text>
-<text x="76.2" y="167.64" size="1.778" layer="97">SJ4 allows you to route the SDO (serial 
+<text x="76.2" y="167.64" size="1.778" layer="97">SJ3 allows you to route the SDO (serial 
 data out) either to the next board (if this 
 board is in a chain) or back to the previous 
 board (if this board is the last or only board 
@@ -18676,7 +18680,7 @@ board, for single board applications.</text>
 </instance>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="V" x="147.32" y="0"/>
-<instance part="SJ4" gate="G$1" x="101.6" y="162.56" smashed="yes" rot="R90">
+<instance part="SJ3" gate="G$1" x="101.6" y="162.56" smashed="yes" rot="R90">
 <attribute name="NAME" x="99.822" y="164.465" size="1.778" layer="95"/>
 </instance>
 </instances>
@@ -19221,7 +19225,7 @@ board, for single board applications.</text>
 <label x="12.7" y="124.46" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="SJ4" gate="G$1" pin="3"/>
+<pinref part="SJ3" gate="G$1" pin="3"/>
 <wire x1="106.68" y1="162.56" x2="109.22" y2="162.56" width="0.1524" layer="91"/>
 <label x="109.22" y="162.56" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -19233,7 +19237,7 @@ board, for single board applications.</text>
 <label x="111.76" y="116.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="SJ4" gate="G$1" pin="2"/>
+<pinref part="SJ3" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="157.48" x2="101.6" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="154.94" x2="109.22" y2="154.94" width="0.1524" layer="91"/>
 <label x="109.22" y="154.94" size="1.27" layer="95" xref="yes"/>
@@ -19246,7 +19250,7 @@ board, for single board applications.</text>
 <label x="50.8" y="121.92" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="SJ4" gate="G$1" pin="1"/>
+<pinref part="SJ3" gate="G$1" pin="1"/>
 <wire x1="96.52" y1="162.56" x2="93.98" y2="162.56" width="0.1524" layer="91"/>
 <label x="93.98" y="162.56" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -19257,12 +19261,10 @@ board, for single board applications.</text>
 <errors>
 <approved hash="102,1,162.56,114.3,VCC,VS,,,,"/>
 <approved hash="102,1,30.48,30.48,VCC,VS,,,,"/>
-<approved hash="102,1,191.77,176.53,VCC,VS,,,,"/>
 <approved hash="113,1,71.7973,9.96527,JP7,,,,,"/>
 <approved hash="113,1,122.597,25.5947,JP8,,,,,"/>
 <approved hash="113,1,122.597,9.96527,JP9,,,,,"/>
 <approved hash="113,1,193.717,73.4653,JP5,,,,,"/>
-<approved hash="113,1,157.48,146.643,SJ1,,,,,"/>
 <approved hash="113,1,71.7973,22.6653,JP6,,,,,"/>
 <approved hash="113,1,30.48,97.5572,JP3,,,,,"/>
 <approved hash="113,1,30.48,77.2372,JP4,,,,,"/>
