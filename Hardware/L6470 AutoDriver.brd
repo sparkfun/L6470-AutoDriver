@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -235,7 +235,6 @@ COMPATIBLE</text>
 <wire x1="63.373" y1="19.558" x2="63.373" y2="20.828" width="0.254" layer="21" curve="-180"/>
 <wire x1="63.373" y1="20.828" x2="63.373" y2="22.098" width="0.254" layer="21" curve="-180"/>
 <wire x1="63.373" y1="22.098" x2="63.373" y2="23.368" width="0.254" layer="21" curve="-180"/>
-<text x="32.893" y="-28.956" size="1.778" layer="51" font="vector">Revised by: Patrick Alberts</text>
 <text x="30.099" y="34.29" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">!CS</text>
 <text x="1.27" y="39.37" size="1.778" layer="1" font="vector" ratio="15">1</text>
 <text x="3.81" y="39.37" size="1.778" layer="2" font="vector" ratio="15">2</text>
