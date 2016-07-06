@@ -18600,7 +18600,7 @@ CPOL=CPHA=1
 <text x="3.048" y="42.164" size="2.54" layer="97">Vs must be between 8V and 45V
 Motor supply must be enabled
 for chip comms to work!</text>
-<text x="238.76" y="7.62" size="2.54" layer="94">12</text>
+<text x="238.76" y="7.62" size="2.54" layer="94">13</text>
 <text x="76.2" y="167.64" size="1.778" layer="97">SJ3 allows you to route the SDO (serial 
 data out) either to the next board (if this 
 board is in a chain) or back to the previous 
