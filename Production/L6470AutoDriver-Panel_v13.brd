@@ -207,12 +207,10 @@
 <text x="55.499" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="58.039" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="60.579" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="70.739" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="70.739" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="75.819" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="14.859" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="17.399" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="19.939" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="22.479" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="25.019" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="35.179" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="40.259" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -240,7 +238,7 @@ COMPATIBLE</text>
 <text x="10.668" y="46.228" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="8.128" y="43.688" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="11.938" y="43.688" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="9.398" y="42.418" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="9.398" y="42.418" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="36.322" y="50.927" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="21.082" y="41.021" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -264,6 +262,11 @@ BOARD</text>
 <text x="65.278" y="50.927" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="19.939" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="22.479" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="38.354" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="147.066" y="13.208" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="147.066" y="28.448" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="147.066" y="17.018" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -320,12 +323,10 @@ BOARD</text>
 <text x="129.667" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="132.207" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="134.747" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="144.907" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="144.907" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="149.987" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="89.027" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="91.567" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="94.107" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="96.647" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="99.187" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="109.347" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="114.427" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -353,7 +354,7 @@ COMPATIBLE</text>
 <text x="84.836" y="46.228" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="82.296" y="43.688" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="86.106" y="43.688" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="83.566" y="42.418" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="83.566" y="42.418" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="110.49" y="50.927" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="95.25" y="41.021" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -377,6 +378,11 @@ BOARD</text>
 <text x="139.446" y="50.927" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="94.107" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="96.647" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="112.522" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="221.234" y="13.208" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="221.234" y="28.448" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="221.234" y="17.018" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -433,12 +439,10 @@ BOARD</text>
 <text x="203.835" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="206.375" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="208.915" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="219.075" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="219.075" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="224.155" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="163.195" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="165.735" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="168.275" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="170.815" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="173.355" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="183.515" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="188.595" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -466,7 +470,7 @@ COMPATIBLE</text>
 <text x="159.004" y="46.228" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="156.464" y="43.688" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="160.274" y="43.688" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="157.734" y="42.418" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="157.734" y="42.418" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="184.658" y="50.927" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="169.418" y="41.021" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -490,6 +494,11 @@ BOARD</text>
 <text x="213.614" y="50.927" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="168.275" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="170.815" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="186.69" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="295.402" y="13.208" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="295.402" y="28.448" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="295.402" y="17.018" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -546,12 +555,10 @@ BOARD</text>
 <text x="278.003" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="280.543" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="283.083" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="293.243" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="293.243" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="298.323" y="48.895" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="237.363" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="239.903" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="242.443" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="244.983" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="247.523" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="257.683" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="262.763" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -579,7 +586,7 @@ COMPATIBLE</text>
 <text x="233.172" y="46.228" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="230.632" y="43.688" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="234.442" y="43.688" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="231.902" y="42.418" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="231.902" y="42.418" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="258.826" y="50.927" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="243.586" y="41.021" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -603,6 +610,11 @@ BOARD</text>
 <text x="287.782" y="50.927" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="242.443" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="244.983" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="260.858" y="48.768" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="72.898" y="63.246" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="72.898" y="78.486" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="72.898" y="67.056" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -659,12 +671,10 @@ BOARD</text>
 <text x="55.499" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="58.039" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="60.579" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="70.739" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="70.739" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="75.819" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="14.859" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="17.399" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="19.939" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="22.479" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="25.019" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="35.179" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="40.259" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -692,7 +702,7 @@ COMPATIBLE</text>
 <text x="10.668" y="96.266" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="8.128" y="93.726" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="11.938" y="93.726" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="9.398" y="92.456" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="9.398" y="92.456" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="36.322" y="100.965" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="21.082" y="91.059" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -716,6 +726,11 @@ BOARD</text>
 <text x="65.278" y="100.965" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="19.939" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="22.479" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="38.354" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="147.066" y="63.246" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="147.066" y="78.486" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="147.066" y="67.056" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -772,12 +787,10 @@ BOARD</text>
 <text x="129.667" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="132.207" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="134.747" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="144.907" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="144.907" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="149.987" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="89.027" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="91.567" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="94.107" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="96.647" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="99.187" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="109.347" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="114.427" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -805,7 +818,7 @@ COMPATIBLE</text>
 <text x="84.836" y="96.266" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="82.296" y="93.726" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="86.106" y="93.726" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="83.566" y="92.456" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="83.566" y="92.456" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="110.49" y="100.965" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="95.25" y="91.059" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -829,6 +842,11 @@ BOARD</text>
 <text x="139.446" y="100.965" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="94.107" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="96.647" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="112.522" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="221.234" y="63.246" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="221.234" y="78.486" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="221.234" y="67.056" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -885,12 +903,10 @@ BOARD</text>
 <text x="203.835" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="206.375" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="208.915" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="219.075" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="219.075" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="224.155" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="163.195" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="165.735" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="168.275" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="170.815" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="173.355" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="183.515" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="188.595" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -918,7 +934,7 @@ COMPATIBLE</text>
 <text x="159.004" y="96.266" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="156.464" y="93.726" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="160.274" y="93.726" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="157.734" y="92.456" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="157.734" y="92.456" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="184.658" y="100.965" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="169.418" y="91.059" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -942,6 +958,11 @@ BOARD</text>
 <text x="213.614" y="100.965" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="168.275" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="170.815" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="186.69" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="295.402" y="63.246" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="295.402" y="78.486" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="295.402" y="67.056" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -998,12 +1019,10 @@ BOARD</text>
 <text x="278.003" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="280.543" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="283.083" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="293.243" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="293.243" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="298.323" y="98.933" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="237.363" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="239.903" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="242.443" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="244.983" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="247.523" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="257.683" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="262.763" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -1031,7 +1050,7 @@ COMPATIBLE</text>
 <text x="233.172" y="96.266" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="230.632" y="93.726" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="234.442" y="93.726" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="231.902" y="92.456" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="231.902" y="92.456" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="258.826" y="100.965" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="243.586" y="91.059" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -1055,6 +1074,11 @@ BOARD</text>
 <text x="287.782" y="100.965" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="242.443" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="244.983" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="260.858" y="98.806" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="72.898" y="113.284" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="72.898" y="128.524" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="72.898" y="117.094" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -1111,12 +1135,10 @@ BOARD</text>
 <text x="55.499" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="58.039" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="60.579" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="70.739" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="70.739" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="75.819" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="14.859" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="17.399" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="19.939" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="22.479" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="25.019" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="35.179" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="40.259" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -1144,7 +1166,7 @@ COMPATIBLE</text>
 <text x="10.668" y="146.304" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="8.128" y="143.764" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="11.938" y="143.764" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="9.398" y="142.494" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="9.398" y="142.494" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="36.322" y="151.003" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="21.082" y="141.097" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -1168,6 +1190,11 @@ BOARD</text>
 <text x="65.278" y="151.003" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="19.939" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="22.479" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="38.354" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="147.066" y="113.284" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="147.066" y="128.524" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="147.066" y="117.094" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -1224,12 +1251,10 @@ BOARD</text>
 <text x="129.667" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="132.207" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="134.747" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="144.907" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="144.907" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="149.987" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="89.027" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="91.567" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="94.107" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="96.647" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="99.187" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="109.347" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="114.427" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -1257,7 +1282,7 @@ COMPATIBLE</text>
 <text x="84.836" y="146.304" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="82.296" y="143.764" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="86.106" y="143.764" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="83.566" y="142.494" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="83.566" y="142.494" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="110.49" y="151.003" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="95.25" y="141.097" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -1281,6 +1306,11 @@ BOARD</text>
 <text x="139.446" y="151.003" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="94.107" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="96.647" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="112.522" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="221.234" y="113.284" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="221.234" y="128.524" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="221.234" y="117.094" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -1337,12 +1367,10 @@ BOARD</text>
 <text x="203.835" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="206.375" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="208.915" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="219.075" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="219.075" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="224.155" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="163.195" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="165.735" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="168.275" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="170.815" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="173.355" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="183.515" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="188.595" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -1370,7 +1398,7 @@ COMPATIBLE</text>
 <text x="159.004" y="146.304" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="156.464" y="143.764" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="160.274" y="143.764" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="157.734" y="142.494" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="157.734" y="142.494" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="184.658" y="151.003" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="169.418" y="141.097" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -1394,6 +1422,11 @@ BOARD</text>
 <text x="213.614" y="151.003" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="168.275" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="170.815" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="186.69" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <text x="295.402" y="113.284" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1B</text>
 <text x="295.402" y="128.524" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O1A</text>
 <text x="295.402" y="117.094" size="1.016" layer="21" font="vector" ratio="15" rot="R90">O2B</text>
@@ -1450,12 +1483,10 @@ BOARD</text>
 <text x="278.003" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="280.543" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!FLAG</text>
 <text x="283.083" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!RESET</text>
-<text x="293.243" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">BUSYN</text>
+<text x="293.243" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!BUSY</text>
 <text x="298.323" y="148.971" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">STCK</text>
 <text x="237.363" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="239.903" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">OSCOUT</text>
-<text x="242.443" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MOSI</text>
-<text x="244.983" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">MISO</text>
 <text x="247.523" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">3-5V</text>
 <text x="257.683" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">GND</text>
 <text x="262.763" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SCK</text>
@@ -1483,7 +1514,7 @@ COMPATIBLE</text>
 <text x="233.172" y="146.304" size="1.778" layer="2" font="vector" ratio="15">2</text>
 <text x="230.632" y="143.764" size="1.778" layer="15" font="vector" ratio="15">3</text>
 <text x="234.442" y="143.764" size="1.778" layer="16" font="vector" ratio="15" rot="MR0">4</text>
-<text x="231.902" y="142.494" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v12</text>
+<text x="231.902" y="142.494" size="1.778" layer="16" font="vector" ratio="15" rot="MR270">v13</text>
 <text x="258.826" y="151.003" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270" align="bottom-right">SD to
 prev bd</text>
 <text x="243.586" y="141.097" size="0.8128" layer="21" font="vector" ratio="15" rot="SR270">SD from
@@ -1507,6 +1538,11 @@ BOARD</text>
 <text x="287.782" y="151.003" size="0.8128" layer="21" font="vector" ratio="15" rot="SR0">FROM
 PREV
 BOARD</text>
+<text x="242.443" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+next bd</text>
+<text x="244.983" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">!CS</text>
+<text x="260.858" y="148.844" size="0.8128" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-right">SD to
+prev bd</text>
 <wire x1="6.35" y1="0" x2="6.35" y2="79.248" width="0.2032" layer="20"/>
 <wire x1="0" y1="0" x2="6.35" y2="0" width="0.2032" layer="20"/>
 <wire x1="0" y1="0" x2="0" y2="29.718" width="0.2032" layer="20"/>
@@ -1519,46 +1555,46 @@ BOARD</text>
 <wire x1="303.022" y1="6.35" x2="27.178" y2="6.35" width="0.2032" layer="20"/>
 <wire x1="303.022" y1="0" x2="303.022" y2="6.35" width="0.2032" layer="20"/>
 <wire x1="303.022" y1="0" x2="76.708" y2="0" width="0.2032" layer="20"/>
-<wire x1="303.53" y1="163.322" x2="303.53" y2="84.074" width="0.2032" layer="20"/>
-<wire x1="309.88" y1="163.322" x2="303.53" y2="163.322" width="0.2032" layer="20"/>
-<wire x1="309.88" y1="163.322" x2="309.88" y2="133.604" width="0.2032" layer="20"/>
-<wire x1="309.88" y1="0" x2="309.88" y2="136.144" width="0.2032" layer="20"/>
+<wire x1="309.88" y1="0" x2="309.88" y2="79.248" width="0.2032" layer="20"/>
 <wire x1="303.53" y1="0" x2="309.88" y2="0" width="0.2032" layer="20"/>
-<wire x1="303.53" y1="0" x2="303.53" y2="86.614" width="0.2032" layer="20"/>
+<wire x1="303.53" y1="0" x2="303.53" y2="29.718" width="0.2032" layer="20"/>
+<wire x1="303.53" y1="163.322" x2="303.53" y2="27.178" width="0.2032" layer="20"/>
+<wire x1="309.88" y1="163.322" x2="303.53" y2="163.322" width="0.2032" layer="20"/>
+<wire x1="309.88" y1="163.322" x2="309.88" y2="76.708" width="0.2032" layer="20"/>
 <wire x1="303.022" y1="163.322" x2="230.632" y2="163.322" width="0.2032" layer="20"/>
 <wire x1="303.022" y1="156.972" x2="303.022" y2="163.322" width="0.2032" layer="20"/>
 <wire x1="303.022" y1="156.972" x2="280.162" y2="156.972" width="0.2032" layer="20"/>
 <wire x1="6.858" y1="156.972" x2="282.702" y2="156.972" width="0.2032" layer="20"/>
 <wire x1="6.858" y1="163.322" x2="6.858" y2="156.972" width="0.2032" layer="20"/>
 <wire x1="6.858" y1="163.322" x2="233.172" y2="163.322" width="0.2032" layer="20"/>
-<text x="121.92" y="1.778" size="2.54" layer="21" font="vector" ratio="7">This is a 4-layer cake board!!</text>
-<text x="307.848" y="53.086" size="2.54" layer="21" font="vector" ratio="7" rot="R90">This is a 4-layer cake board!!</text>
-<text x="122.428" y="159.004" size="2.54" layer="21" font="vector" ratio="7">This is a 4-layer cake board!!</text>
-<text x="4.318" y="52.324" size="2.54" layer="21" font="vector" ratio="7" rot="R90">This is a 4-layer cake board!!</text>
-<wire x1="3.81" y1="90.932" x2="3.81" y2="100.838" width="0.254" layer="21"/>
-<wire x1="161.036" y1="159.512" x2="170.942" y2="159.512" width="0.254" layer="21"/>
-<wire x1="307.34" y1="91.694" x2="307.34" y2="101.6" width="0.254" layer="21"/>
-<wire x1="160.528" y1="2.286" x2="170.434" y2="2.286" width="0.254" layer="21"/>
-<text x="79.756" y="6.858" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="153.924" y="6.858" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="228.092" y="6.858" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="303.022" y="55.626" size="0.3048" layer="20" font="vector" ratio="7" rot="R90">Route Out</text>
-<text x="228.092" y="56.388" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="153.924" y="56.642" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="79.756" y="56.388" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="7.112" y="55.626" size="0.3048" layer="20" font="vector" ratio="7" rot="R90">Route Out</text>
-<text x="7.112" y="105.664" size="0.3048" layer="20" font="vector" ratio="7" rot="R90">Route Out</text>
-<text x="79.756" y="106.426" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="153.924" y="106.426" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="228.092" y="106.426" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="303.022" y="105.664" size="0.3048" layer="20" font="vector" ratio="7" rot="R90">Route Out</text>
-<text x="228.092" y="156.21" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="153.924" y="156.21" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="79.756" y="156.21" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
-<text x="6.7564" y="155.2956" size="0.254" layer="20" font="vector" ratio="7" rot="R45">Route Out</text>
-<text x="301.9806" y="6.6294" size="0.254" layer="20" font="vector" ratio="7" rot="R45">Route Out</text>
-<text x="301.879" y="156.591" size="0.254" layer="20" font="vector" ratio="7" rot="R315">Route Out</text>
-<text x="6.604" y="7.9248" size="0.254" layer="20" font="vector" ratio="7" rot="R315">Route Out</text>
+<text x="6.604" y="7.9502" size="0.254" layer="20" font="vector" ratio="7" rot="R315">Route Out</text>
+<text x="302.0314" y="6.5786" size="0.254" layer="20" font="vector" ratio="7" rot="R45">Route Out</text>
+<text x="301.879" y="156.6418" size="0.254" layer="20" font="vector" ratio="7" rot="R315">Route Out</text>
+<text x="6.731" y="155.2956" size="0.254" layer="20" font="vector" ratio="7" rot="R45">Route Out</text>
+<text x="79.629" y="156.2608" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="153.8478" y="156.2608" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="227.9142" y="156.3116" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="227.9904" y="6.7818" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="153.797" y="6.7818" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="79.629" y="6.8072" size="0.3048" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="6.9596" y="55.5498" size="0.3048" layer="20" font="vector" ratio="7" rot="R90">Route Out</text>
+<text x="7.0358" y="105.6386" size="0.3048" layer="20" font="vector" ratio="7" rot="R90">Route Out</text>
+<text x="303.1236" y="55.5752" size="0.3048" layer="20" font="vector" ratio="7" rot="R90">Route Out</text>
+<text x="303.1744" y="105.5878" size="0.3048" layer="20" font="vector" ratio="7" rot="R90">Route Out</text>
+<text x="227.584" y="106.5276" size="0.4064" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="153.416" y="106.5784" size="0.4064" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="79.248" y="106.553" size="0.4064" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="79.3496" y="56.4896" size="0.4064" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="153.4414" y="56.515" size="0.4064" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="227.6602" y="56.515" size="0.4064" layer="20" font="vector" ratio="7">Route Out</text>
+<text x="117.602" y="159.004" size="2.54" layer="21" font="vector" ratio="7">This is a four layer cake board!!</text>
+<text x="117.856" y="2.286" size="2.54" layer="21" font="vector" ratio="7">This is a four layer cake board!!</text>
+<text x="307.848" y="49.53" size="2.54" layer="21" font="vector" ratio="7" rot="R90">This is a four layer cake board!!</text>
+<text x="4.572" y="43.688" size="2.54" layer="21" font="vector" ratio="7" rot="R90">This is a four layer cake board!!</text>
+<wire x1="3.9878" y1="88.0364" x2="3.9878" y2="97.9424" width="0.254" layer="21"/>
+<wire x1="162.3314" y1="159.6136" x2="172.2374" y2="159.6136" width="0.254" layer="21"/>
+<wire x1="307.2384" y1="93.7768" x2="307.2384" y2="103.6828" width="0.254" layer="21"/>
+<wire x1="162.3822" y1="2.8448" x2="172.2882" y2="2.8448" width="0.254" layer="21"/>
 </plain>
 <libraries>
 <library name="SparkFun">
@@ -4972,9 +5008,9 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="248.412" y="132.2339" size="0.02" layer="27" rot="R90"/>
 <attribute name="VALUE" x="250.317" y="131.064" size="0.4064" layer="27" rot="R90"/>
 </element>
-<element name="E$5" library="SparkFun-Aesthetics" package="FIDUCIAL-1X2" value="" x="304.673" y="149.352" rot="R180"/>
-<element name="E$6" library="SparkFun-Aesthetics" package="FIDUCIAL-1X2" value="" x="304.673" y="16.002"/>
-<element name="E$1" library="SparkFun-Retired" package="FIDUCIAL-1.5X3" value="" x="4.572" y="14.732"/>
+<element name="E$5" library="SparkFun-Aesthetics" package="FIDUCIAL-1X2" value="" x="304.673" y="14.478"/>
+<element name="E$6" library="SparkFun-Aesthetics" package="FIDUCIAL-1X2" value="" x="304.673" y="147.066" rot="R180"/>
+<element name="E$1" library="SparkFun-Retired" package="FIDUCIAL-1.5X3" value="" x="4.572" y="10.922"/>
 </elements>
 <signals>
 <signal name="5V">
