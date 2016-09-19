@@ -24,10 +24,14 @@ void playNote(int note, int duration)
   while (boardA.busyCheck());
 }
 
-// This is the configuration function for the three dSPIN parts. Read the inline
+// This is the configuration function for the two dSPIN parts. Read the inline
 //  comments for more info.
 void dSPINConfig(void)
 {
+  boardA.SPIPortConnect(&SPI);      // Before doing anything else, we need to
+  boardB.SPIPortConnect(&SPI);      //  tell the objects which SPI port to use.
+                                    //  Some devices may have more than one.
+  
   boardA.configSyncPin(BUSY_PIN, 0);// BUSY pin low during operations;
                                     //  second paramter ignored.
   boardA.configStepMode(STEP_FS);   // 0 microsteps per step
@@ -41,17 +45,15 @@ void dSPINConfig(void)
   boardA.setOCShutdown(OC_SD_DISABLE); // don't shutdown on OC
   boardA.setVoltageComp(VS_COMP_DISABLE); // don't compensate for motor V
   boardA.setSwitchMode(SW_USER);    // Switch is not hard stop
-  boardA.setOscMode(INT_16MHZ_OSCOUT_16MHZ); // for boardA, we want 16MHz
-                                    //  internal osc, 16MHz out. boardB and
-                                    //  boardC will be the same in all respects
-                                    //  but this, as they will bring in and
-                                    //  output the clock to keep them
-                                    //  all in phase.
-  boardA.setAccKVAL(255);           // We'll tinker with these later, if needed.
-  boardA.setDecKVAL(255);
-  boardA.setRunKVAL(255);
+  boardA.setOscMode(EXT_16MHZ_OSCOUT_INVERT); // for boardA, we want 16MHz
+                                    //  external osc, 16MHz out. boardB
+                                    //  will be the same in all respects
+                                    //  but this, as it will generate the
+                                    //  clock.
+  boardA.setAccKVAL(128);           // We'll tinker with these later, if needed.
+  boardA.setDecKVAL(128);
+  boardA.setRunKVAL(128);
   boardA.setHoldKVAL(32);           // This controls the holding current; keep it low.
-  
   
   boardB.configSyncPin(BUSY_PIN, 0);// BUSY pin low during operations;
                                     //  second paramter ignored.
@@ -66,15 +68,15 @@ void dSPINConfig(void)
   boardB.setOCShutdown(OC_SD_DISABLE); // don't shutdown on OC
   boardB.setVoltageComp(VS_COMP_DISABLE); // don't compensate for motor V
   boardB.setSwitchMode(SW_USER);    // Switch is not hard stop
-  boardB.setOscMode(EXT_16MHZ_OSCOUT_INVERT); // for boardA, we want 16MHz
-                                    //  internal osc, 16MHz out. boardB and
-                                    //  boardC will be the same in all respects
-                                    //  but this, as they will bring in and
+  boardB.setOscMode(INT_16MHZ_OSCOUT_16MHZ); // for boardB, we want 16MHz
+                                    //  internal osc, 16MHz out. boardA
+                                    //  will be the same in all respects
+                                    //  but this, as it will bring in and
                                     //  output the clock to keep them
-                                    //  all in phase.
-  boardB.setAccKVAL(255);           // We'll tinker with these later, if needed.
-  boardB.setDecKVAL(255);
-  boardB.setRunKVAL(255);
+                                    //  voth in phase.
+  boardB.setAccKVAL(128);           // We'll tinker with these later, if needed.
+  boardB.setDecKVAL(128);
+  boardB.setRunKVAL(128);
   boardB.setHoldKVAL(32);           // This controls the holding current; keep it low.
 }
   

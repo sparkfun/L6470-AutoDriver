@@ -1,0 +1,28 @@
+
+AutodriverLib=/home/mike.hord/dropbox/projects/libraries/SparkFun_AutoDriver_Arduino_Library CD=. filter="*.c *.cpp *.h *.ino" {
+ examples=examples {
+  SparkFundSPINexample=SparkFundSPINexample {
+   SparkFunL6470.h
+   SparkFundSPINcommands.ino
+   SparkFundSPINexample.ino
+   SparkFundSPINsupport.ino
+  }
+  SparkFunGetSetParamTest=SparkFunGetSetParamTest {
+   SparkFunGetSetParamTest.ino
+  }
+  SparkFunLibraryTest=SparkFunLibraryTest {
+   SparkFunnotes.h
+   SparkFunLibraryTest.ino
+   SparkFunsupportFunctions.ino
+   SparkFunwantYouGone.ino
+  }
+ }
+ src=src {
+  SparkFunAutoDriver.cpp
+  SparkFunAutoDriverCommands.cpp
+  SparkFunAutoDriverConfig.cpp
+  SparkFunAutoDriverSupport.cpp
+  SparkFunAutoDriver.h
+  SparkFundSPINConstants.h
+ }
+}

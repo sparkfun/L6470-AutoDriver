@@ -59,14 +59,14 @@ float AutoDriver::maxSpdParse(unsigned long stepsPerSec)
 // This is a 12-bit value, so we need to make sure the value is at or below 0xFFF.
 unsigned long AutoDriver::minSpdCalc(float stepsPerSec)
 {
-  float temp = stepsPerSec * 4.1943;
+  float temp = stepsPerSec / 0.238;
   if( (unsigned long) long(temp) > 0x00000FFF) return 0x00000FFF;
   else return (unsigned long) long(temp);
 }
 
 float AutoDriver::minSpdParse(unsigned long stepsPerSec)
 {
-    return (float) (stepsPerSec & 0x00000FFF) / 4.1943;
+    return (float) ((stepsPerSec & 0x00000FFF) * 0.238);
 }
 
 // The value in the FS_SPD register is ([(steps/s)*(tick)]/(2^-18))-0.5 where tick is 
@@ -107,9 +107,9 @@ float AutoDriver::intSpdParse(unsigned long stepsPerSec)
 // This is a 20-bit value, so we need to make sure the value is at or below 0xFFFFF.
 unsigned long AutoDriver::spdCalc(float stepsPerSec)
 {
-  float temp = stepsPerSec * 67.106;
-  if( (unsigned long) long(temp) > 0x000FFFFF) return 0x000FFFFF;
-  else return (unsigned long)temp;
+  unsigned long temp = stepsPerSec * 67.106;
+  if( temp > 0x000FFFFF) return 0x000FFFFF;
+  else return temp;
 }
 
 float AutoDriver::spdParse(unsigned long stepsPerSec)
@@ -196,16 +196,16 @@ unsigned long AutoDriver::paramHandler(byte param, unsigned long value)
     //  it will usually work to max the value for RUN, ACC, and DEC. Maxing the value for
     //  HOLD may result in excessive power dissipation when the motor is not running.
     case KVAL_HOLD:
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     case KVAL_RUN:
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     case KVAL_ACC:
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     case KVAL_DEC:
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     // INT_SPD, ST_SLP, FN_SLP_ACC and FN_SLP_DEC are all related to the back EMF
     //  compensation functionality. Please see the datasheet for details of this
@@ -215,37 +215,37 @@ unsigned long AutoDriver::paramHandler(byte param, unsigned long value)
       retVal = xferParam(value, 14);
       break;
     case ST_SLP: 
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     case FN_SLP_ACC: 
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     case FN_SLP_DEC: 
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     // K_THERM is motor winding thermal drift compensation. Please see the datasheet
     //  for full details on operation- the default value should be okay for most users.
     case K_THERM: 
       value &= 0x0F;
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     // ADC_OUT is a read-only register containing the result of the ADC measurements.
     //  This is less useful than it sounds; see the datasheet for more information.
     case ADC_OUT:
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     // Set the overcurrent threshold. Ranges from 375mA to 6A in steps of 375mA.
     //  A set of defined constants is provided for the user's convenience. Default
     //  value is 3.375A- 0x08. This is a 4-bit value.
     case OCD_TH: 
       value &= 0x0F;
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     // Stall current threshold. Defaults to 0x40, or 2.03A. Value is from 31.25mA to
     //  4A in 31.25mA steps. This is a 7-bit value.
     case STALL_TH: 
       value &= 0x7F;
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     // STEP_MODE controls the microstepping settings, as well as the generation of an
     //  output signal from the dSPIN. Bits 2:0 control the number of microsteps per
@@ -256,13 +256,13 @@ unsigned long AutoDriver::paramHandler(byte param, unsigned long value)
     // Most likely, only the microsteps per step value will be needed; there is a set
     //  of constants provided for ease of use of these values.
     case STEP_MODE:
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     // ALARM_EN controls which alarms will cause the FLAG pin to fall. A set of constants
     //  is provided to make this easy to interpret. By default, ALL alarms will trigger the
     //  FLAG pin.
     case ALARM_EN: 
-      retVal = SPIXfer((byte)value);
+      retVal = xferParam(value, 8);
       break;
     // CONFIG contains some assorted configuration bits and fields. A fairly comprehensive
     //  set of reasonably self-explanatory constants is provided, but users should refer
@@ -280,7 +280,7 @@ unsigned long AutoDriver::paramHandler(byte param, unsigned long value)
       retVal = xferParam(0, 16);;
       break;
     default:
-      retVal = SPIXfer((byte)value);
+      SPIXfer((byte)value);
       break;
   }
   return retVal;
@@ -293,30 +293,35 @@ unsigned long AutoDriver::xferParam(unsigned long value, byte bitLen)
 {
   byte byteLen = bitLen/8;      // How many BYTES do we have?
   if (bitLen%8 > 0) byteLen++;  // Make sure not to lose any partial byte values.
-  // Let's make sure our value has no spurious bits set, and if the value was too
-  //  high, max it out.
-  unsigned long mask = 0xffffffff >> (32-bitLen);
-  if (value > mask) value = mask;
   
-  byte* bytePointer = (byte*)&value;
-  for (signed char i = byteLen-1; i >= 0; i--)
+  byte temp;
+
+  unsigned long retVal = 0; 
+
+  for (int i = 0; i < byteLen; i++)
   {
-    bytePointer[i] = SPIXfer(bytePointer[i]);
+    temp = SPIXfer((byte)(value>>((byteLen-i-1)*8)));
+    retVal |= (temp<<((byteLen-i-1)*8)) ;
   }
 
-  return value;
+  unsigned long mask = 0xffffffff >> (32-bitLen);
+  return retVal & mask;
 }
-
-SPISettings settings(5000000, MSBFIRST, SPI_MODE3);
 
 byte AutoDriver::SPIXfer(byte data)
 {
-  byte rxData;
-  SPI.beginTransaction(settings);
+  byte dataPacket[_numBoards];
+  int i;
+  for (i=0; i < _numBoards; i++)
+  {
+    dataPacket[i] = 0;
+  }
+  dataPacket[_position] = data;
   digitalWrite(_CSPin, LOW);
-  rxData = SPI.transfer(data); 
+  _SPI->beginTransaction(SPISettings(4000000, MSBFIRST, SPI_MODE3));
+  _SPI->transfer(dataPacket, _numBoards);
+  _SPI->endTransaction();
   digitalWrite(_CSPin, HIGH);
-  SPI.endTransaction();
-  return rxData;
+  return dataPacket[_position];
 }
 
