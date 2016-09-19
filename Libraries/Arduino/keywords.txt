@@ -78,6 +78,7 @@ EXT_32MHZ_OSCOUT_INVERT	LITERAL1
 
 # Public functions
 AutoDriver	KEYWORD2
+SPIPortConnect  KEYWORD2
 busyCheck	KEYWORD2
 getStatus	KEYWORD2
 setParam	KEYWORD2

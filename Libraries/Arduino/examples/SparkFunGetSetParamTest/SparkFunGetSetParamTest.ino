@@ -7,7 +7,7 @@
  * the same result. This is a useful test that should be run whenever the library is changed.
  */
 
-AutoDriver board(10, 6, 5);
+AutoDriver board(0, 10, 6);
 String name = "";
 unsigned long temp;
 boolean tempBool;
@@ -17,53 +17,53 @@ int tempInt;
 int tempInt2;
 boolean pass = true;
 
-void pv(float v) {
-  Serial.print(name + " ");
-  Serial.println(v, DEC);
-}
-
-void test(float v1, float v2) {
-  if (v1 != v2) {
-    Serial.println("!!! " + name + " failed");
-    Serial.println(v1, DEC);
-    Serial.println(v2, DEC);
-    pass = false;
-  };
-}
-
-void test(int v1, int v2) {
-  if (v1 != v2) {
-    Serial.println("!!! " + name + " failed");
-    Serial.println(v1, DEC);
-    Serial.println(v2, DEC);
-    pass = false;
-  };
-}
-
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(9600); 
+  // Start by setting up the pins and the SPI peripheral.
+  //  The library doesn't do this for you! 
+  pinMode(6, OUTPUT);
+  pinMode(MOSI, OUTPUT);
+  pinMode(MISO, INPUT);
+  pinMode(13, OUTPUT);
+  pinMode(10, OUTPUT);
+  digitalWrite(10, HIGH);
+  digitalWrite(6, LOW);
+  digitalWrite(6, HIGH);
+  SPI.begin();
+  SPI.setDataMode(SPI_MODE3);
 
-  // first check  board status, should be 0x2E88 on bootup, but it's not :-/
-  temp = board.getParam(STATUS);
-  Serial.print("board status: ");
+  // Tell the Autodriver object which SPI port you want to use. Some
+  //  devices may have more than one.
+  board.SPIPortConnect(&SPI);
+
+  // first check  board config register, should be 0x2E88 on bootup
+  temp = board.getParam(CONFIG);
+  Serial.print("Config reg value: ");
   Serial.println(temp, HEX);
-
-  Serial.println("resetting device");
-  board.resetDev();
-
+  
+  // Now check the status of the board. Should be 0x7c03
   temp = board.getStatus();
-  Serial.print("board status: ");
+  Serial.print("Status reg value: ");
   Serial.println(temp, HEX);
 
-  // set and get all configuration values here to make sure the conversions are working
+  // set and get all configuration values here to make sure the 
+  //  conversions are working and comms are up properly.
   name = "LoSpdOpt";
   tempBool = board.getLoSpdOpt();
   pv(tempBool);
-  tempBool = !tempBool;
+  tempBool = ~tempBool;
   board.setLoSpdOpt(tempBool);
   test(tempBool, board.getLoSpdOpt());
 
+  name = "MinSpeed";
+  tempFloat = board.getMinSpeed();
+  pv(tempFloat);
+  // be careful about rounding
+  tempFloat = (tempFloat == 23.8418788909) ? 47.6837577818 : 23.8418788909;
+  board.setMinSpeed(tempFloat);
+  test(tempFloat, board.getMinSpeed());
+  
   name = "StepMode";
   tempByte = board.getStepMode();
   pv(tempByte);
@@ -78,14 +78,6 @@ void setup()
   tempFloat = (tempFloat == 152.587890625) ? 305.17578125 : 152.587890625;
   board.setMaxSpeed(tempFloat);
   test(tempFloat, board.getMaxSpeed());
-
-  name = "MinSpeed";
-  tempFloat = board.getMinSpeed();
-  pv(tempFloat);
-  // be careful about rounding
-  tempFloat = (tempFloat == 23.8418788909) ? 47.6837577818 : 23.8418788909;
-  board.setMinSpeed(tempFloat);
-  test(tempFloat, board.getMinSpeed());
 
   name = "FullSpeed";
   tempFloat = board.getFullSpeed();
@@ -204,7 +196,86 @@ void loop()
   // do nothing
 }
 
+void pv(float v) 
+{
+  Serial.print(name + " ");
+  Serial.println(v, DEC);
+}
 
+void pv(bool v)
+{
+  Serial.print(name + " ");
+  Serial.println(v);
+}
+
+void pv(byte v)
+{
+  Serial.print(name + " ");
+  Serial.println(v, DEC);
+}
+
+void pv(unsigned long v)
+{
+  Serial.print(name + " ");
+  Serial.println(v, DEC);
+}
+
+void pv(int v)
+{
+  Serial.print(name + " ");
+  Serial.println(v, DEC);
+}
+
+void test(float v1, float v2) 
+{
+  if (abs(v1-v2) > 0.1) 
+  {
+    Serial.println("!!! " + name + " failed");
+    Serial.print("Expected ");
+    Serial.println(v1, DEC);
+    Serial.print("Got ");
+    Serial.println(v2, DEC);
+    pass = false;
+  }
+  else
+  {
+    Serial.println(name + " passed r/w test!");
+  }
+}
+
+void test(int v1, int v2) 
+{
+  if (v1 != v2) 
+  {
+    Serial.println("!!! " + name + " failed");
+    Serial.print("Expected ");
+    Serial.println(v1, DEC);
+    Serial.print("Got ");
+    Serial.println(v2, DEC);
+    pass = false;
+  }
+  else
+  {
+    Serial.println(name + " passed r/w test!");
+  }
+}
+
+void test(bool v1, bool v2) 
+{
+  if (v1 != v2) 
+  {
+    Serial.println("!!! " + name + " failed");
+    Serial.print("Expected ");
+    Serial.println(v1);
+    Serial.print("Got ");
+    Serial.println(v2);
+    pass = false;
+  }
+  else
+  {
+    Serial.println(name + " passed r/w test!");
+  }
+}
 
 
 

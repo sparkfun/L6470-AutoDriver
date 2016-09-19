@@ -2,6 +2,7 @@
 #define AutoDriver_h
 
 #include "Arduino.h"
+#include <SPI.h>
 #include "SparkFundSPINConstants.h"
 
 class AutoDriver
@@ -10,8 +11,10 @@ class AutoDriver
     // Constructors. We'll ALWAYS want a CS pin and a reset pin, but we may
     //  not want a busy pin. By using two constructors, we make it easy to
     //  allow that.
-    AutoDriver(int CSPin, int resetPin, int busyPin);
-    AutoDriver(int CSPin, int resetPin);
+    AutoDriver(int position, int CSPin, int resetPin, int busyPin);
+    AutoDriver(int position, int CSPin, int resetPin);
+
+    void SPIPortConnect(SPIClass *SPIPort);
     
     // These are super-common things to do: checking if the device is busy,
     //  and checking the status of the device. We make a couple of functions
@@ -91,7 +94,6 @@ class AutoDriver
     
     
   private:
-    void SPIConfig();
     byte SPIXfer(byte data);
     unsigned long xferParam(unsigned long value, byte bitLen);
     unsigned long paramHandler(byte param, unsigned long value);
@@ -117,6 +119,9 @@ class AutoDriver
     int _CSPin;
     int _resetPin;
     int _busyPin;
+    int _position;
+    static int _numBoards;
+    SPIClass *_SPI;
 };
 
 // User constants for public functions.
@@ -138,7 +143,7 @@ class AutoDriver
 //    goUntil()
 //    releaseSw()
 #define RESET_ABSPOS  0x00
-#define COPY_ABSPOS   0x01
+#define COPY_ABSPOS   0x08
 
 // configSyncPin() options: the !BUSY/SYNC pin can be configured to be low when
 //  the chip is executing a command, *or* to output a pulse on each full step
