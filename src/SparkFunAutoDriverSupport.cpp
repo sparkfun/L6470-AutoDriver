@@ -120,9 +120,9 @@ float AutoDriver::spdParse(unsigned long stepsPerSec)
 // Much of the functionality between "get parameter" and "set parameter" is
 //  very similar, so we deal with that by putting all of it in one function
 //  here to save memory space and simplify the program.
-unsigned long AutoDriver::paramHandler(byte param, unsigned long value)
+long AutoDriver::paramHandler(byte param, unsigned long value)
 {
-  unsigned long retVal = 0;   // This is a temp for the value to return.
+  long retVal = 0;   // This is a temp for the value to return.
   
   // This switch structure handles the appropriate action for each register.
   //  This is necessary since not all registers are of the same length, either
@@ -289,7 +289,7 @@ unsigned long AutoDriver::paramHandler(byte param, unsigned long value)
 // Generalization of the subsections of the register read/write functionality.
 //  We want the end user to just write the value without worrying about length,
 //  so we pass a bit length parameter from the calling function.
-unsigned long AutoDriver::xferParam(unsigned long value, byte bitLen)
+long AutoDriver::xferParam(unsigned long value, byte bitLen)
 {
   byte byteLen = bitLen/8;      // How many BYTES do we have?
   if (bitLen%8 > 0) byteLen++;  // Make sure not to lose any partial byte values.
@@ -300,8 +300,9 @@ unsigned long AutoDriver::xferParam(unsigned long value, byte bitLen)
 
   for (int i = 0; i < byteLen; i++)
   {
+    retVal = retVal << 8;
     temp = SPIXfer((byte)(value>>((byteLen-i-1)*8)));
-    retVal |= (temp<<((byteLen-i-1)*8)) ;
+    retVal |= temp;
   }
 
   unsigned long mask = 0xffffffff >> (32-bitLen);

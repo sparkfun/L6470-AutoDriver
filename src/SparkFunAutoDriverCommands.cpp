@@ -14,7 +14,7 @@ void AutoDriver::setParam(byte param, unsigned long value)
 
 // Realize the "get parameter" function, to read from the various registers in
 //  the dSPIN chip.
-unsigned long AutoDriver::getParam(byte param)
+long AutoDriver::getParam(byte param)
 {
   SPIXfer(param | GET_PARAM);
   return paramHandler(param, 0);
@@ -31,7 +31,7 @@ long AutoDriver::getPos()
   // Since ABS_POS is a 22-bit 2's comp value, we need to check bit 21 and, if
   //  it's set, set all the bits ABOVE 21 in order for the value to maintain
   //  its appropriate sign.
-  if (temp & 0x00200000) temp |= 0xffC00000;
+  //if (temp & 0x00200000) temp |= 0xffC00000;
   return temp;
 }
 
