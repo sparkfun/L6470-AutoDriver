@@ -31,7 +31,7 @@ long AutoDriver::getPos()
   // Since ABS_POS is a 22-bit 2's comp value, we need to check bit 21 and, if
   //  it's set, set all the bits ABOVE 21 in order for the value to maintain
   //  its appropriate sign.
-  //if (temp & 0x00200000) temp |= 0xffC00000;
+  if (temp & 0x00200000) temp |= 0xffc00000;
   return temp;
 }
 
