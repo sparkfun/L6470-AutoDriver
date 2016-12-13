@@ -3,7 +3,7 @@ SparkFun AutoDriver - Stepper Motor Driver
 
 ![AutoDriver](https://cdn.sparkfun.com//assets/parts/1/1/2/8/8/13752-01a.jpg)  
 
-[*AutoDriver (BOB-11611)*](https://www.sparkfun.com/products/11611)
+[*AutoDriver (BOB-13752)*](https://www.sparkfun.com/products/13752)
 
 The AutoDriver is a bipolar stepper driver based on the ST Micro L6470 chip. It allows a processor to control a single 3A bipolar stepper motor across an 8-45V supply range.
 
