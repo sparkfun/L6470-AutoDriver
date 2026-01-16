@@ -11,7 +11,7 @@
 // This is a 12-bit value, so we need to make sure the value is at or below 0xFFF.
 unsigned long AutoDriver::accCalc(float stepsPerSecPerSec)
 {
-  float temp = stepsPerSecPerSec * 0.137438;
+  float temp = stepsPerSecPerSec * 0.068719476736;
   if( (unsigned long) long(temp) > 0x00000FFF) return 0x00000FFF;
   else return (unsigned long) long(temp);
 }
@@ -26,7 +26,7 @@ float AutoDriver::accParse(unsigned long stepsPerSecPerSec)
 // This is a 12-bit value, so we need to make sure the value is at or below 0xFFF.
 unsigned long AutoDriver::decCalc(float stepsPerSecPerSec)
 {
-  float temp = stepsPerSecPerSec * 0.137438;
+  float temp = stepsPerSecPerSec * 0.068719476736;
   if( (unsigned long) long(temp) > 0x00000FFF) return 0x00000FFF;
   else return (unsigned long) long(temp);
 }
